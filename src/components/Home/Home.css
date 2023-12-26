@@ -1,0 +1,120 @@
+.home-container {
+    position: relative;
+    padding-top: 25vh;
+    height: 500px;
+    background-image: url('https://images-eu.ssl-images-amazon.com/images/G/31/img22/Wireless/devjyoti/GW/Uber/Nov/D103625178_DesktopTallHero_3000x1200._CB574597993_.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.card-con {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    gap: 20px;
+    bottom: 45vh;
+}
+
+.card-con .card {
+    position: relative;
+    width: 33%;
+    height: 320px;
+    margin: 10px;
+    background-color: #FFFFFF;
+}
+
+.card-con .card .boxes {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    justify-self: stretch;
+}
+
+.card-con .card .box {
+    position: relative;
+    background-color: #FFFFFF;
+    height: 120px;
+    width: 120px;
+    margin: 5px;
+}
+
+.box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.product-grid ul {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background-color: #E3E6E6;
+}
+
+.product-grid ul .box {
+    background-color: #FFFFFF;
+}
+
+.product-grid ul .box .product-img {
+    position: relative;
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+
+.product-grid ul .box .product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-grid ul .box h3 {
+    margin-top: 10px;
+    font-weight: 600;
+    color: #000;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.product-grid ul .box .price {
+    margin-top: 8px;
+    font-weight: 600;
+    color: #000;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.product-grid ul .box p {
+    margin-top: 20px;
+    font-weight: 600;
+    color: #000;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.product-grid ul .box button {
+    padding: 8px 12px;
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #3f3f3f;
+    cursor: pointer;
+    background-color: aquamarine;
+}
