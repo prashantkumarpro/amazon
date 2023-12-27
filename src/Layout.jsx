@@ -8,12 +8,14 @@ function Layout({ setData, cart, data }) {
 
   return (
     <>
-      <main style={{backgroundColor:'#E3E6E6'}}>
+   
 
         <Navbar setData={setData} cart={cart} />
+        <main style={{backgroundColor:'#E3E6E6'}}>
         <Outlet data={data} />
+        </main>
         <Footer />
-      </main>
+     
     </>
   )
 }

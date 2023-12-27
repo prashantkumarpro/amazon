@@ -11,8 +11,6 @@ const Home = () => {
     <>
 
       <div className='home-container'>
-      </div>
-
       {(isLoading) ? <h2 style={{
         textAlign: 'center',
         margin: '20px',
@@ -36,6 +34,9 @@ const Home = () => {
         <div className="card">box2</div>
         <div className="card">box3</div>
       </div>
+      </div>
+
+    
 
 
     </>

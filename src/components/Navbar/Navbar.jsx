@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './Navbar.css'
 import logo from './amazon_logo.png'
 import { Link, useNavigate } from 'react-router-dom'
-// import { products } from '../ProductList/data'
+
 
 const Navbar = ({ cart }) => {
 
@@ -87,25 +87,29 @@ const Navbar = ({ cart }) => {
                             <span className='cart'></span>
                         </Link>
                     </div>
+
                 </div>
             </nav>
             <div className="nav-part2">
-                <div className="left border">
-                    <i className="ri-menu-line"></i>
-                    <Link to="/Product">All</Link>
-                </div>
+
                 <div className="shop-container">
                     <ul className="shop-link">
-                        <li> <Link to="/Mobile" className='border'> Mobile</Link></li>
-                        <li> <Link to="prime" className='border'> Prime</Link></li>
-                        <li> <Link className='border'> Prime</Link></li>
-                        <li> <Link className='border'> Amazon miniTV</Link></li>
-                        <li> <Link className='border'> Sell</Link></li>
-                        <li> <Link className='border'> Amazon Pay</Link></li>
-                        <li> <Link className='border'> Subscrive And Save</Link></li>
-                        <li> <Link className='border'> Buy Again</Link></li>
-                        <li> <Link className='border'> Cupon</Link></li>
-                        <li> <Link className='border'> Gift Card</Link></li>
+                        <li className='border'>
+                            <div className="left ">
+                                <i className="ri-menu-line"></i>
+                                <Link to="/Product">All</Link>
+                            </div>
+                        </li>
+                        <li className='border'> <Link to="/Mobile"> Mobile</Link></li>
+                        <li className='border'> <Link to="prime"> Prime</Link></li>
+                        <li className='border'> <Link> Prime</Link></li>
+                        <li className='border'> <Link> Amazon miniTV</Link></li>
+                        <li className='border'> <Link> Sell</Link></li>
+                        <li className='border'> <Link> Amazon Pay</Link></li>
+                        <li className='border'> <Link> Subscrive And Save</Link></li>
+                        <li className='border'> <Link> Buy Again</Link></li>
+                        <li className='border'> <Link> Cupon</Link></li>
+                        <li className='border'> <Link> Gift Card</Link></li>
                     </ul>
                 </div>
                 <div className="right">
@@ -116,7 +120,6 @@ const Navbar = ({ cart }) => {
 
 
                 </div>
-
             </div>
 
         </>
