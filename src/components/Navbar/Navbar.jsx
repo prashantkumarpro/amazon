@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './Navbar.css'
 import logo from './amazon_logo.png'
+import flag from './indian_flag.png'
 import { Link, useNavigate } from 'react-router-dom'
 
 
@@ -23,6 +24,13 @@ const Navbar = ({ cart }) => {
 
     }
 
+    const languages = ["EN", "हिन्दी", "தமிழ்", "मराठी"]
+
+    const [displayData, setDisplayData] = useState(false)
+
+    const languageHandler = () => {
+        setDisplayData();
+    }
     return (
         <>
 
@@ -65,7 +73,18 @@ const Navbar = ({ cart }) => {
 
                     <div className="right">
                         <div className="country border">
-                            India
+                            <div className="flag">
+                                <img src={flag} alt="Indian_Flag" />
+                            </div>
+                            <select
+                                className="lang_con"
+                                onMouseEnter={languageHandler}>
+                                {languages.map((lang, id) => {
+                                    return (
+                                        <option key={id}>{lang}</option>
+                                    )
+                                })}
+                            </select>
                         </div>
                         <div className="account-types border">
                             <span className='line-1'>Hello,Prashant</span>
@@ -91,15 +110,12 @@ const Navbar = ({ cart }) => {
                 </div>
             </nav>
             <div className="nav-part2">
-
+                <div className="left border">
+                    <i className="ri-menu-line"></i>
+                    <Link to="/Product">All</Link>
+                </div>
                 <div className="shop-container">
                     <ul className="shop-link">
-                        <li className='border'>
-                            <div className="left ">
-                                <i className="ri-menu-line"></i>
-                                <Link to="/Product">All</Link>
-                            </div>
-                        </li>
                         <li className='border'> <Link to="/Mobile"> Mobile</Link></li>
                         <li className='border'> <Link to="prime"> Prime</Link></li>
                         <li className='border'> <Link> Prime</Link></li>
