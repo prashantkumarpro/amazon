@@ -11,12 +11,12 @@ const Home = () => {
     <>
 
       <div className='home-container'>
-      {(isLoading) ? <h2 style={{
-        textAlign: 'center',
-        margin: '20px',
-        zIndex: '999'
-      }}> Loading</h2> : ''}
-      
+        {(isLoading) ? <h2 style={{
+          textAlign: 'center',
+          margin: '20px',
+          zIndex: '999'
+        }}> Loading</h2> : ''}
+   
       <div className="card-con">
         <div className="card">
           <h3 style={{ textAlign: 'center', fontSize: '18px', marginTop: '5px' }}>Men's clothing</h3>
@@ -31,14 +31,71 @@ const Home = () => {
           </div>
 
         </div>
-        <div className="card">box2</div>
-        <div className="card">box3</div>
+        <div className="card">
+          <h3 style={{ fontSize: '18px', marginTop: '5px' }}>Men's clothing</h3>
+          <div className="box-con">
+            <div className="box">
+              <img src="https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg" alt="" />
+
+            </div>
+            <div className="box">
+              <img src="https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg" alt="" />
+            </div>
+          </div>
+          <div className="box-con">
+            <div className="box">
+              <img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" alt="" />
+            </div>
+            <div className="box">
+              <img src="https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg" alt="" />
+            </div>
+          </div>
+          <Link to="/Product">See more</Link>
+        </div>
+        <div className="card">
+          <h3 style={{ fontSize: '18px', marginTop: '5px' }}>Mobile</h3>
+          <div className="box-con">
+            <div className="box">
+              <img src="https://m.media-amazon.com/images/I/51HnWtX7klL._AC_UY218_.jpg" alt="" />
+            </div>
+            <div className="box">
+              <img src="https://m.media-amazon.com/images/I/81itQPVn-GL._AC_UL320_.jpg" alt="" />
+            </div>
+          </div>
+          <div className="box-con">
+            <div className="box">
+              <img src="https://m.media-amazon.com/images/I/81bh6SxXQ+L._AC_UL320_.jpg" alt="" />
+            </div>
+            <div className="box">
+              <img src="https://m.media-amazon.com/images/I/51ZuW-0fiiL._AC_UY218_.jpg" alt="" />
+            </div>
+          </div>
+          <Link to="/Mobile">See more</Link>
+        </div>
+        <div className="card">
+          <h3 style={{ fontSize: '18px', marginTop: '5px' }}>Mobile</h3>
+          <div className="box-con">
+            <div className="box">
+              <img src="https://m.media-amazon.com/images/I/51HnWtX7klL._AC_UY218_.jpg" alt="" />
+
+            </div>
+            <div className="box">
+              <img src="https://m.media-amazon.com/images/I/81itQPVn-GL._AC_UL320_.jpg" alt="" />
+            </div>
+          </div>
+          <div className="box-con">
+            <div className="box">
+              <img src="https://m.media-amazon.com/images/I/81bh6SxXQ+L._AC_UL320_.jpg" alt="" />
+            </div>
+            <div className="box">
+              <img src="https://m.media-amazon.com/images/I/51ZuW-0fiiL._AC_UY218_.jpg" alt="" />
+            </div>
+          </div>
+          <Link to="/Mobile">See more</Link>
+        </div>
+
       </div>
       </div>
-
-    
-
-
     </>
   );
 };
