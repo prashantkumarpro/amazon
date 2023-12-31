@@ -56,10 +56,10 @@ const Navbar = ({ cart }) => {
                     <form
                         onSubmit={submitHendlar}
                         className="nav-search">
-
                         <select>
                             <option>All</option>
                         </select>
+                        
                         <input type="text"
                             value={query}
                             onChange={(e) => setQuery(e.target.value)}

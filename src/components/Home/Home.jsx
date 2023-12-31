@@ -11,90 +11,96 @@ const Home = () => {
     <>
 
       <div className='home-container'>
+        <img
+          className='home_image'
+          src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Wireless/devjyoti/GW/Uber/Nov/D103625178_DesktopTallHero_3000x1200._CB574597993_.jpg" alt="" />
+
         {(isLoading) ? <h2 style={{
           textAlign: 'center',
           margin: '20px',
           zIndex: '999'
         }}> Loading</h2> : ''}
-   
-      <div className="card-con">
-        <div className="card">
-          <h3 style={{ textAlign: 'center', fontSize: '18px', marginTop: '5px' }}>Men's clothing</h3>
-          <div className="boxes">
-            {mensCloths.map(menCloth => (
-              <Link to={`/SingleProductPage/${menCloth.id}`}
-                className="box"
-                key={menCloth.id}>
-                <img src={menCloth.image} alt={menCloth.name} />
-              </Link>
-            ))}
-          </div>
 
-        </div>
-        <div className="card">
-          <h3 style={{ fontSize: '18px', marginTop: '5px' }}>Men's clothing</h3>
-          <div className="box-con">
-            <div className="box">
-              <img src="https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg" alt="" />
+        <div className="card-con">
+          <div className="card">
+            <h3 style={{ textAlign: 'center', fontSize: '18px', marginTop: '5px' }}>Men's clothing</h3>
+            <div className="boxes">
+              {mensCloths.map(menCloth => (
+                <Link to={`/SingleProductPage/${menCloth.id}`}
+                  className="box"
+                  key={menCloth.id}>
+                  <img src={menCloth.image} alt={menCloth.name} />
+                </Link>
+              ))}
+            </div>
 
-            </div>
-            <div className="box">
-              <img src="https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg" alt="" />
-            </div>
           </div>
-          <div className="box-con">
-            <div className="box">
-              <img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" alt="" />
-            </div>
-            <div className="box">
-              <img src="https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg" alt="" />
-            </div>
-          </div>
-          <Link to="/Product">See more</Link>
-        </div>
-        <div className="card">
-          <h3 style={{ fontSize: '18px', marginTop: '5px' }}>Mobile</h3>
-          <div className="box-con">
-            <div className="box">
-              <img src="https://m.media-amazon.com/images/I/51HnWtX7klL._AC_UY218_.jpg" alt="" />
-            </div>
-            <div className="box">
-              <img src="https://m.media-amazon.com/images/I/81itQPVn-GL._AC_UL320_.jpg" alt="" />
-            </div>
-          </div>
-          <div className="box-con">
-            <div className="box">
-              <img src="https://m.media-amazon.com/images/I/81bh6SxXQ+L._AC_UL320_.jpg" alt="" />
-            </div>
-            <div className="box">
-              <img src="https://m.media-amazon.com/images/I/51ZuW-0fiiL._AC_UY218_.jpg" alt="" />
-            </div>
-          </div>
-          <Link to="/Mobile">See more</Link>
-        </div>
-        <div className="card">
-          <h3 style={{ fontSize: '18px', marginTop: '5px' }}>Mobile</h3>
-          <div className="box-con">
-            <div className="box">
-              <img src="https://m.media-amazon.com/images/I/51HnWtX7klL._AC_UY218_.jpg" alt="" />
+          <div className="card">
+            <h3 style={{ fontSize: '18px', marginTop: '5px' }}>Men's clothing</h3>
+            <div className="box-con">
+              <div className="box">
+                <img src="https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg" alt="" />
 
+              </div>
+              <div className="box">
+                <img src="https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg" alt="" />
+              </div>
             </div>
-            <div className="box">
-              <img src="https://m.media-amazon.com/images/I/81itQPVn-GL._AC_UL320_.jpg" alt="" />
+            <div className="box-con">
+              <div className="box">
+                <img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" alt="" />
+              </div>
+              <div className="box">
+                <img src="https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg" alt="" />
+              </div>
             </div>
+            <Link to="/Product">See more</Link>
           </div>
-          <div className="box-con">
-            <div className="box">
-              <img src="https://m.media-amazon.com/images/I/81bh6SxXQ+L._AC_UL320_.jpg" alt="" />
+          <div className="card">
+            <h3 style={{ fontSize: '18px', marginTop: '5px' }}>Mobile</h3>
+            <div className="box-con">
+              <div className="box">
+                <img src="https://m.media-amazon.com/images/I/51HnWtX7klL._AC_UY218_.jpg" alt="" />
+              </div>
+              <div className="box">
+                <img src="https://m.media-amazon.com/images/I/81itQPVn-GL._AC_UL320_.jpg" alt="" />
+              </div>
             </div>
-            <div className="box">
-              <img src="https://m.media-amazon.com/images/I/51ZuW-0fiiL._AC_UY218_.jpg" alt="" />
+            <div className="box-con">
+              <div className="box">
+                <img src="https://m.media-amazon.com/images/I/81bh6SxXQ+L._AC_UL320_.jpg" alt="" />
+              </div>
+              <div className="box">
+                <img src="https://m.media-amazon.com/images/I/51ZuW-0fiiL._AC_UY218_.jpg" alt="" />
+              </div>
             </div>
+            <Link to="/Mobile">See more</Link>
           </div>
-          <Link to="/Mobile">See more</Link>
-        </div>
+          <div className="card">
+            <h3 style={{ fontSize: '18px', marginTop: '5px' }}>Mobile</h3>
+            <div className="box-con">
+              <div className="box">
+                <img src="https://m.media-amazon.com/images/I/51HnWtX7klL._AC_UY218_.jpg" alt="" />
 
-      </div>
+              </div>
+              <div className="box">
+                <img src="https://m.media-amazon.com/images/I/81itQPVn-GL._AC_UL320_.jpg" alt="" />
+              </div>
+            </div>
+            <div className="box-con">
+              <div className="box">
+                <img src="https://m.media-amazon.com/images/I/81bh6SxXQ+L._AC_UL320_.jpg" alt="" />
+              </div>
+              <div className="box">
+                <img src="https://m.media-amazon.com/images/I/51ZuW-0fiiL._AC_UY218_.jpg" alt="" />
+              </div>
+            </div>
+            <Link to="/Mobile">See more</Link>
+          </div>
+        </div>
+        <div className="card-con">
+         
+        </div>
       </div>
     </>
   );

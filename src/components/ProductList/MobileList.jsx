@@ -43,7 +43,7 @@ export const MobileList = ({ cart, setCart }) => {
             setData(() => products)
         }
 
-    
+
     }, [brandName, products, filterAmount, filterColer, searchQuery])
 
     const addToCart = (id, title, price, imageUrl, details) => {
@@ -133,24 +133,27 @@ export const MobileList = ({ cart, setCart }) => {
 
                 </div>
 
-                <div className="product-grid"><ul>
-                    {data.map(product => (
-                        <div className='box'
-                            key={product.id}>
-                            <Link
-                                to={`/SingleProduct/${product.id}`}
-                                className="product-img">
+                <div className="product-grid">
+                    <ul>
+                        {data.map(product => (
+                            <div className='box'
+                                key={product.id}>
+                                <Link
+                                    to={`/SingleProduct/${product.id}`}
+                                    className="product-img">
 
-                                <img src={product.imageUrl} alt="product-image" />
-                            </Link>
-                            <h3>{product.name}</h3>
-                            <p className='price'>₹ {product.price}</p>
-                            <button
-                                onClick={() => addToCart(product.id, product.title, product.price, product.imageUrl, product.details)}
-                            >Add to Cart</button>
-                        </div >
-                    ))}
-                </ul></div>
+                                    <img src={product.imageUrl} alt="product-image" />
+                                </Link>
+                                <h3>{product.name}</h3>
+                                <p className='price'>₹ {product.price}</p>
+                                <button
+                                    onClick={() => addToCart(product.id, product.title, product.price, product.imageUrl, product.details)}
+                                >Add to Cart</button>
+                            </div >
+                        ))}
+
+                    </ul>
+                </div>
 
 
 

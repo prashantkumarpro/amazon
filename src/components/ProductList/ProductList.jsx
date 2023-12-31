@@ -90,7 +90,8 @@ return (
                   </Link>
 
                   <p>{product.title}</p>
-                  <p className='price'>₹ {product.price}</p>
+                  {/* <small>$</small> */}
+                  <strong className='price'>₹ {product.price}</strong>
                 </div>
               </li>
             ))}
