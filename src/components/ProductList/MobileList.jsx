@@ -65,7 +65,7 @@ export const MobileList = ({ cart, setCart }) => {
     }
 
     return (
-        <section>
+        <section className='mobile-section'>
             <ToastContainer
                 position="top-right"
                 autoClose={1500}
