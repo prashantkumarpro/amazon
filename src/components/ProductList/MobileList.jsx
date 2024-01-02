@@ -79,20 +79,21 @@ export const MobileList = ({ cart, setCart }) => {
                 theme="dark"
             />
 
-            <div className="filter-box">
-                <label>
-                    <input
-                        type="text"
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                        placeholder='Search here...'
-                        value={searchQuery}
-                    />
-                </label>
-            </div>
+
 
             <div className="grid">
 
                 <div className="filter-page">
+                    <div className="filter-box">
+                        <label>
+                            <input
+                                type="text"
+                                onChange={(e) => setSearchQuery(e.target.value)}
+                                placeholder='Search here...'
+                                value={searchQuery}
+                            />
+                        </label>
+                    </div>
                     <h3>Category</h3>
                     <div className="brand">
                         <h3>Brand</h3>
