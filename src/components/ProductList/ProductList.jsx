@@ -17,7 +17,7 @@ const ProductList = () => {
 
   return (
     <>
-      <section className='product-section'>
+      <div className='product-section'>
 
         <div className="grid">
           <div className="filter-page">
@@ -91,7 +91,7 @@ const ProductList = () => {
 
                     <p>{product.title}</p>
                     {/* <small>$</small> */}
-                    <strong className='price'>₹ {product.price}</strong>
+                    <strong className='price'>$ {product.price}</strong>
                     <button
                       onClick={() => addToCart(product.id, product.title, product.price, product.imageUrl, product.details)}
                     >Add to Cart</button>
@@ -103,7 +103,7 @@ const ProductList = () => {
           </div>
 
         </div>
-      </section >
+      </div >
     </>
   )
 }

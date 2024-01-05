@@ -145,6 +145,7 @@ export const MobileList = ({ cart, setCart }) => {
 
                                     <img src={product.imageUrl} alt="product-image" />
                                 </Link>
+                                <div className="product-ditels"></div>
                                 <h3>{product.name}</h3>
                                 <p className='price'>₹ {product.price}</p>
                                 <button

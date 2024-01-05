@@ -72,7 +72,7 @@ section .grid ul .box {
 section .grid ul .box .product-img>img {
     width: 100%;
     max-height: 200px;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 .grid ul .box h3 {
@@ -227,7 +227,7 @@ form .serch-box {
     section .grid ul .box {
         position: relative;
         width: 250px;
-        height: 420px;
+        height: 390px;
         background-color: #F7F7F7;
         border-radius: 8px;
         display: flex;
