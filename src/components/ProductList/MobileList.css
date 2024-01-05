@@ -15,7 +15,7 @@
     display: grid;
     background-color:#FFFFFF;
     margin-top:20px;
-
+    grid-template-columns: .2fr 1fr;
 }
 
 .mobile-section .grid .product-grid {
@@ -48,7 +48,7 @@
     width: 100%;
     max-height: 200px;
     background-color: #FAFAFA;
-    object-fit: cover;
+    object-fit: contain;
 }
 /* .mobile-section .grid .product-grid ul .box .product-img img {
     width: 100%;
