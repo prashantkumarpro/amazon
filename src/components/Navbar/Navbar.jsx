@@ -3,12 +3,14 @@ import './Navbar.css'
 import logo from './amazon_logo.png'
 import flag from './indian_flag.png'
 import { Link, useNavigate } from 'react-router-dom'
+import Sidebar from '../Sidebar/Sidebar'
 
 
 const Navbar = ({ cart }) => {
 
 
     const [query, setQuery] = useState('')
+    const [sideBar, setSideBar] = useState(false)
 
     const navigte = useNavigate()
 
@@ -59,9 +61,10 @@ const Navbar = ({ cart }) => {
                         <select>
                             <option>All</option>
                         </select>
-                        
+
                         <input type="text"
                             value={query}
+                            placeholder='Search Amazon.In'
                             onChange={(e) => setQuery(e.target.value)}
                         />
                         <div
@@ -109,6 +112,7 @@ const Navbar = ({ cart }) => {
 
                 </div>
             </nav>
+
             <div className="nav-part2">
                 <div className="left border">
                     <i className="ri-menu-line"></i>
@@ -119,7 +123,7 @@ const Navbar = ({ cart }) => {
                         <li className='border'> <Link to="/Mobile"> Mobile</Link></li>
                         <li className='border'> <Link to="prime"> Prime</Link></li>
                         <li className='border'> <Link> Prime</Link></li>
-                        <li className='border'> <Link> Amazon miniTV</Link></li>
+                        <li className='border' onClick={() => setSideBar(!sideBar)}> <Link> Amazon miniTV</Link></li>
                         <li className='border'> <Link> Sell</Link></li>
                         <li className='border'> <Link> Amazon Pay</Link></li>
                         <li className='border'> <Link> Subscrive And Save</Link></li>
@@ -138,6 +142,14 @@ const Navbar = ({ cart }) => {
                 </div>
             </div>
 
+          
+            {sideBar && (
+                <>
+                    <Sidebar />
+                   
+                </>
+
+            )}
         </>
     )
 }
