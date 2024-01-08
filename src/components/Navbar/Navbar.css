@@ -321,8 +321,6 @@ a {
 
 }
 
-
-
 @media screen and (max-width: 600px) {
     .nav-part2 a:nth-child(5) {
         display: none;

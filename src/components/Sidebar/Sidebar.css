@@ -9,36 +9,6 @@
     /* left: 0; */
 }
 
-.sidebar-con .content {
-    max-width: 360px;
-    height: 100%;
-    background: #FFFFFF;
-}
-
-.sidebar-con .content .account {
-    width: 100%;
-    max-width: 360px;
-    height: 50px;
-    background-color: #232F3E;
-    color: white;
-    display: flex;
-    align-items: center;
-    position: fixed;
-    /* overflow-x: hidden; */
-
-}
-
-.content .account .account-icon {
-    margin: 0 10px 0 36px;
-    font-size: 1.8rem;
-}
-
-.content .account p {
-    font-size: 1.4rem;
-    font-weight: 700;
-}
-
-
 .sidebar-con .close-sidebar {
     position: absolute;
     top: 0;
@@ -47,4 +17,48 @@
     color: #FFFFFF;
     opacity: 0.8;
     cursor: pointer;
+}
+
+.sidebar-con .content {
+    max-width: 360px;
+    height: 100%;
+    background-color: #FFFFFF;
+}
+
+.sidebar-con .content .account {
+    width: 100%;
+    height: 50px;
+    background-color: #232F3E;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.content .account .account-icon {
+    margin: 0 10px 0 36px;
+    font-size: 1.8rem;
+}
+
+.content .account h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.content .content-details {
+    /* margin: 0 10px 0 36px; */
+    padding: 13px 20px 5px 36px;
+}
+
+.content .content-details .links {
+    width: 100%;
+   
+}
+li{
+    padding: 13px 10px 13px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+li:hover{
+    background-color: #f2f2f2;
 }
