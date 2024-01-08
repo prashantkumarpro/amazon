@@ -6,6 +6,8 @@ import { Link, useNavigate } from 'react-router-dom'
 import Sidebar from '../Sidebar/Sidebar'
 
 
+
+
 const Navbar = ({ cart }) => {
 
 
@@ -114,8 +116,8 @@ const Navbar = ({ cart }) => {
             </nav>
 
             <div className="nav-part2">
-                <div className="left border">
-                    <i className="ri-menu-line" onClick={() => setSideBar(!sideBar)}></i>
+                <div className="left border" onClick={() => setSideBar(!sideBar)}>
+                    <i className="ri-menu-line"></i>
                     <Link to="/Product">All</Link>
                 </div>
                 <div className="shop-container">
@@ -142,11 +144,11 @@ const Navbar = ({ cart }) => {
                 </div>
             </div>
 
-          
+
             {sideBar && (
                 <>
-                    <Sidebar />
-                   
+                    <Sidebar setSideBar={setSideBar} sideBar={sideBar} />
+
                 </>
 
             )}
