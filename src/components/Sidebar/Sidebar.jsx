@@ -4,7 +4,9 @@ import { motion } from 'framer-motion'
 import SidebarConten from '../SidebarContent/SidebarConten'
 
 const Sidebar = ({ setSideBar, Sidebar }) => {
+
   let ref = useRef()
+
   useEffect(() => {
     document.body.addEventListener('click', (e) => {
       if (e.target.contains(ref.current)) {
@@ -52,7 +54,7 @@ const Sidebar = ({ setSideBar, Sidebar }) => {
 
         </div>
 
-        <i className="ri-close-fill close-sidebar" onClick={() => setSideBar(false)}></i>
+        <i className="ri-close-line close-sidebar" onClick={() => setSideBar(false)}></i>
       </motion.div>
     </>
   )

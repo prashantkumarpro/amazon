@@ -6,16 +6,15 @@
     z-index: 99;
     opacity: 50;
     top: 0;
- 
+
 }
 
 .sidebar-con .close-sidebar {
     position: absolute;
-    top: 0;
-    left: 360px;
-    font-size: 2.5rem;
-    color: #FFFFFF;
-    opacity: 0.8;
+    left: 362px;
+    top: 2px;
+    font-size: 3rem;
+    color: #FFF;
     cursor: pointer;
 }
 
@@ -48,4 +47,9 @@
     font-weight: 600;
 }
 
-
+.sidebar-content-con {
+    width: 100%;
+    height: calc(100% - 50px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
