@@ -2,8 +2,11 @@ import React from 'react'
 import './ProductList.css'
 import { Link } from 'react-router-dom';
 import { useFilterDataContext } from '../Context/FilterProductContext'
+import { ToastContainer, toast } from 'react-toastify';
 
-const ProductList = () => {
+
+
+const ProductList = ({ cart, setCart }) => {
   const {
     filter_data,
     sortBy,
@@ -15,8 +18,40 @@ const ProductList = () => {
     filterValueHandler,
   } = useFilterDataContext()
 
+
+  const addToCart = (id, title, price, imageUrl, details) => {
+    const obj = {
+      id, title, price, imageUrl, details
+    }
+    setCart([...cart, obj])
+    toast.success('item added!', {
+      position: "top-right",
+      autoClose: 1500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+
+  }
   return (
     <>
+
+      <ToastContainer
+        position="top-right"
+        autoClose={1500}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
+
       <div className='product-section'>
 
         <div className="grid">
@@ -24,7 +59,7 @@ const ProductList = () => {
 
             <form className='filter-box'
               onSubmit={(e) => e.preventDefault()}
-             >
+            >
 
               <input
                 placeholder='Search here...'
