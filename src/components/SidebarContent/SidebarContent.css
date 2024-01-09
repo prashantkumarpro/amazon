@@ -1,0 +1,23 @@
+ .content-con  {
+   border-bottom: 1.5px solid #E4E4E7;
+}
+ .content-con h3 {
+    font-size: 18px;
+    padding: 13px 20px 5px 36px;
+    font-weight: 600;
+}
+
+
+ .content-con ul li {
+    padding: 13px 20px 13px 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+
+.content-con ul li:hover {
+    background-color: #E4E4E7;
+    cursor: pointer;
+}

@@ -6,7 +6,7 @@
     z-index: 99;
     opacity: 50;
     top: 0;
-    /* left: 0; */
+ 
 }
 
 .sidebar-con .close-sidebar {
@@ -20,9 +20,11 @@
 }
 
 .sidebar-con .content {
+    width: 100%;
     max-width: 360px;
     height: 100%;
     background-color: #FFFFFF;
+    position: fixed;
 }
 
 .sidebar-con .content .account {
@@ -32,33 +34,18 @@
     color: white;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .content .account .account-icon {
     margin: 0 10px 0 36px;
     font-size: 1.8rem;
+
 }
 
 .content .account h3 {
     font-size: 1.2rem;
-    font-weight: 700;
+    font-weight: 600;
 }
 
-.content .content-details {
-    /* margin: 0 10px 0 36px; */
-    padding: 13px 20px 5px 36px;
-}
 
-.content .content-details .links {
-    width: 100%;
-   
-}
-li{
-    padding: 13px 10px 13px 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-li:hover{
-    background-color: #f2f2f2;
-}

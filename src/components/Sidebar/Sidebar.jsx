@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import './Sidebar.css'
 import { motion } from 'framer-motion'
+import SidebarConten from '../SidebarContent/SidebarConten'
 
 const Sidebar = ({ setSideBar, Sidebar }) => {
   let ref = useRef()
@@ -26,14 +27,29 @@ const Sidebar = ({ setSideBar, Sidebar }) => {
             <i className="ri-account-circle-fill account-icon"></i>
             <h3>Hello, Sign In</h3>
           </div>
-          <div className='content-details'>
-            <h3 style={{marginBottom:'10px', padding:"0 6px"}}>Digital Content And Devices</h3>
-            <ul className='links'>
-              <li>Echo & Alexa <span><i class="ri-arrow-right-s-line"></i></span></li>
-              <li>Echo & Alexa <span><i class="ri-arrow-right-s-line"></i></span></li>
-              <li>Echo & Alexa <span><i class="ri-arrow-right-s-line"></i></span></li>
-            </ul>
+          <div className="sidebar-content-con">
+
+            <SidebarConten
+              title='Digital Content And Devices'
+              one='Echo & Alexa'
+              two='Kindle E-Readers & eBooks'
+              three='Amazon Prime Video'
+              four='Amazon Audiobooks' />
+            <SidebarConten
+              title='Shop By Category'
+              one='Mobiles, Computers'
+              two='TV, Appliances, Electronics'
+              three="Men's Fashion"
+              four="Women's Fashion" />
+            <SidebarConten
+              title='Programs & Features'
+              one='Amazon Pay'
+              two='Gift Cards & Mobile Recharges'
+              three="Amazon Launchpad"
+              four="Handloom and Handicrafts" />
+
           </div>
+
         </div>
 
         <i className="ri-close-fill close-sidebar" onClick={() => setSideBar(false)}></i>
@@ -43,3 +59,4 @@ const Sidebar = ({ setSideBar, Sidebar }) => {
 }
 
 export default Sidebar
+
