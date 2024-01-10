@@ -2,6 +2,7 @@ import React from 'react';
 import './Home.css';
 import { useDataContext } from '../Context/ProductContext';
 import { Link } from 'react-router-dom';
+import Banner from '../Banner/Banner';
 
 const Home = () => {
   const { isLoading, mensCloths } = useDataContext();
@@ -11,10 +12,14 @@ const Home = () => {
     <>
 
       <div className='home-container'>
+
         <img
           className='home_image'
           src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Wireless/devjyoti/GW/Uber/Nov/D103625178_DesktopTallHero_3000x1200._CB574597993_.jpg" alt="" />
+        <div className="banner-part">
+          <Banner />
 
+        </div>
         {(isLoading) ? <h2 style={{
           textAlign: 'center',
           margin: '20px',
@@ -99,7 +104,7 @@ const Home = () => {
           </div>
         </div>
         <div className="card-con">
-         
+
         </div>
       </div>
     </>
