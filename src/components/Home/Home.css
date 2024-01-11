@@ -1,23 +1,31 @@
 .home-container {
+    position: relative;
     margin: 0 auto;
     max-width: 1500px;
-}
-
-.home_image {
     width: 100%;
-    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
-    z-index: -1;
-    margin-bottom: -150px;
+    top: 0;
+    background-color: #e7e7e7;
+    height: calc(100vh - 60px);
+    min-height: 100vh;
+    border-bottom: 2px solid rgb(199, 199, 199);
+    margin-bottom: 10px;
+}
+.banner_part{
+    position: relative;
+    width: 100%;
+    height: 280px;
 }
 
 .card-con {
+    position: relative;
     display: flex;
     justify-content: space-around;
     align-items: flex-end;
     flex-wrap: wrap;
-    margin-top: 20px;
+    top: 60px;
+    left: 0;
     z-index: 1;
-
+    /* margin-top: -100px; */
 }
 
 .card-con .card {
@@ -112,6 +120,7 @@
 
 
 }
+
 @media (max-width:430px) {
 
     .card-con .card {
