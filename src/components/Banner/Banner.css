@@ -1,16 +1,21 @@
-.banner_img{
+.carouseal {
+    max-height: 230px;
+    overflow: visible;
+
+}
+
+.carouseal .banner_img {
     width: 100%;
-    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
-
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    /* mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); */
 }
 
-.carousel{
-    margin-top: 10;
-}
 
 
-@media (max-width:768px){
-    .banner_img{
+@media (max-width:768px) {
+    .banner_img {
         object-fit: cover;
         height: 180px;
     }
