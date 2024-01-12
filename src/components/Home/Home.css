@@ -5,15 +5,16 @@
     width: 100%;
     top: 0;
     background-color: #e7e7e7;
-    height: calc(100vh - 60px);
-    min-height: 100vh;
-    border-bottom: 2px solid rgb(199, 199, 199);
-    margin-bottom: 10px;
+    min-height: calc(100vh - 60px);
+    /* height: 100%; */
 }
-.banner_part{
+
+.banner_part {
     position: relative;
     width: 100%;
-    height: 280px;
+    margin: 0 auto;
+    border-bottom: 2px solid rgb(199, 199, 199);
+
 }
 
 .card-con {
@@ -22,10 +23,9 @@
     justify-content: space-around;
     align-items: flex-end;
     flex-wrap: wrap;
-    top: 60px;
+    top: 0;
     left: 0;
     z-index: 1;
-    /* margin-top: -100px; */
 }
 
 .card-con .card {
