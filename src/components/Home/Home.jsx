@@ -3,7 +3,7 @@ import './Home.css';
 import { useDataContext } from '../Context/ProductContext';
 import { Link } from 'react-router-dom';
 import Banner from '../Banner/Banner';
-
+import ProductCarousel from '../ProductCarousel/ProductCarousel';
 const Home = () => {
   const { isLoading, mensCloths } = useDataContext();
 
@@ -24,20 +24,28 @@ const Home = () => {
 
         <div className="card-con">
           <div className="card">
-            <h3 style={{ textAlign: 'center', fontSize: '18px', marginTop: '5px' }}>Men's clothing</h3>
-            <div className="boxes">
-              {mensCloths.map(menCloth => (
-                <Link to={`/SingleProductPage/${menCloth.id}`}
-                  className="box"
-                  key={menCloth.id}>
-                  <img src={menCloth.image} alt={menCloth.name} />
-                </Link>
-              ))}
-            </div>
+            <h3 style={{ fontSize: '18px', marginTop: '5px' }}>Men's Clothing</h3>
+            <div className="box-con">
+              <div className="box">
+                <img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" alt="" />
 
+              </div>
+              <div className="box">
+                <img src="https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg" alt="" />
+              </div>
+            </div>
+            <div className="box-con">
+              <div className="box">
+                <img src="https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg" alt="" />
+              </div>
+              <div className="box">
+                <img src="https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg" alt="" />
+              </div>
+            </div>
+            <Link to="/Product">See more</Link>
           </div>
           <div className="card">
-            <h3 style={{ fontSize: '18px', marginTop: '5px' }}>Men's clothing</h3>
+            <h3 style={{ fontSize: '18px', marginTop: '5px' }}>Keep shopping for</h3>
             <div className="box-con">
               <div className="box">
                 <img src="https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg" alt="" />
@@ -58,13 +66,13 @@ const Home = () => {
             <Link to="/Product">See more</Link>
           </div>
           <div className="card">
-            <h3 style={{ fontSize: '18px', marginTop: '5px' }}>Mobile</h3>
+            <h3 style={{ fontSize: '18px', marginTop: '5px' }}>Deals on smartphones</h3>
             <div className="box-con">
               <div className="box">
-                <img src="https://m.media-amazon.com/images/I/51HnWtX7klL._AC_UY218_.jpg" alt="" />
+                <img src="https://m.media-amazon.com/images/I/61bUETZj9AL._AC_UY218_.jpg" alt="" />
               </div>
               <div className="box">
-                <img src="https://m.media-amazon.com/images/I/81itQPVn-GL._AC_UL320_.jpg" alt="" />
+                <img src="https://m.media-amazon.com/images/I/71nj3tkXZXL._AC_UL320_.jpg" alt="" />
               </div>
             </div>
             <div className="box-con">
@@ -72,34 +80,42 @@ const Home = () => {
                 <img src="https://m.media-amazon.com/images/I/81bh6SxXQ+L._AC_UL320_.jpg" alt="" />
               </div>
               <div className="box">
-                <img src="https://m.media-amazon.com/images/I/51ZuW-0fiiL._AC_UY218_.jpg" alt="" />
+                <img src="https://m.media-amazon.com/images/I/51HnWtX7klL._AC_UY218_.jpg" alt="" />
               </div>
             </div>
             <Link to="/Mobile">See more</Link>
           </div>
           <div className="card">
-            <h3 style={{ fontSize: '18px', marginTop: '5px' }}>Mobile</h3>
+            <h3 style={{ fontSize: '18px', marginTop: '5px' }}>Phones and Accessories</h3>
             <div className="box-con">
               <div className="box">
-                <img src="https://m.media-amazon.com/images/I/51HnWtX7klL._AC_UY218_.jpg" alt="" />
+                <img src="https://images-eu.ssl-images-amazon.com/images/I/81WimZLWH1L._AC_UL232_SR232,232_.jpg" alt="" />
 
               </div>
               <div className="box">
-                <img src="https://m.media-amazon.com/images/I/81itQPVn-GL._AC_UL320_.jpg" alt="" />
+                <img src="https://m.media-amazon.com/images/I/51oMWaW7tKL._AC_UL320_.jpg" alt="" />
               </div>
             </div>
             <div className="box-con">
               <div className="box">
-                <img src="https://m.media-amazon.com/images/I/81bh6SxXQ+L._AC_UL320_.jpg" alt="" />
+                <img src="https://m.media-amazon.com/images/I/41zb0e965jL._AC_SR320,320_.jpg" alt="" />
               </div>
               <div className="box">
-                <img src="https://m.media-amazon.com/images/I/51ZuW-0fiiL._AC_UY218_.jpg" alt="" />
+                <img src="https://m.media-amazon.com/images/I/41R51TjCz7L._AC_SR320,320_.jpg" alt="" />
               </div>
             </div>
             <Link to="/Mobile">See more</Link>
           </div>
         </div>
 
+        <div className="blockbaster_deal">
+          <div className="deal_header">
+            <h3>Blockbuster deals</h3>
+            <h3>See all deals </h3>
+          </div>
+          <ProductCarousel/>
+        </div>
+        
         <div className="card-con">
           <div className="card">
             <h3 style={{ textAlign: 'center', fontSize: '18px', marginTop: '5px' }}>Men's clothing</h3>
