@@ -4,10 +4,9 @@ import { useDataContext } from '../Context/ProductContext';
 import { Link } from 'react-router-dom';
 import Banner from '../Banner/Banner';
 import ProductCarousel from '../ProductCarousel/ProductCarousel';
+
 const Home = () => {
   const { isLoading, mensCloths } = useDataContext();
-
-
   return (
     <>
 
@@ -107,15 +106,12 @@ const Home = () => {
             <Link to="/Mobile">See more</Link>
           </div>
         </div>
-
-        <div className="blockbaster_deal">
-          <div className="deal_header">
-            <h3>Blockbuster deals</h3>
-            <h3>See all deals </h3>
-          </div>
-          <ProductCarousel/>
-        </div>
         
+        <ProductCarousel />
+        
+    
+     
+
         <div className="card-con">
           <div className="card">
             <h3 style={{ textAlign: 'center', fontSize: '18px', marginTop: '5px' }}>Men's clothing</h3>
