@@ -12,7 +12,7 @@
     padding: 20px;
     margin: 20px auto;
     width: 100%;
-    background-color: #fff;
+    background-color: #FFFFFF;
 
 
 }
@@ -25,13 +25,14 @@
     font-size: 14px;
     gap: 10px;
 
+
 }
 
 .blockbaster_deal .deals_product {
     position: relative;
     display: flex;
     justify-content: space-around;
-
+    margin: 0 0 105px;
 }
 
 .blockbaster_deal .deals_product .box {
@@ -48,19 +49,22 @@
 
 }
 
-.blockbaster_deal .box1 {
+.blockbaster_deal .product_img {
     margin: 10px 0;
     padding: 20PX;
     width: 250PX;
     height: 250PX;
-    background-color: #f7f7f7;
-   
+    background-color: #F7F8F8;
+
 }
 
-.blockbaster_deal .box1 img {
+.blockbaster_deal .product_img img {
     width: 100%;
     /* max-height: 220px;    */
     height: 100%;
     object-fit: contain;
 
+}
+p{
+    font-size: .84rem;
 }

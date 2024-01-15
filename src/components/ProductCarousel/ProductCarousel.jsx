@@ -3,16 +3,23 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import './ProductCarousel.css'
 import Divider from '@mui/material/Divider';
-
+import { products } from './ProductData'
+console.log(products)
 const responsive = {
+  superLargeDesktop: {
+    // the naming can be any, depends on you.
+    breakpoint: { max: 4000, min: 3000 },
+    items: 5
+  },
+
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
-    items: 3,
+    items: 5,
 
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
-    items: 2,
+    items: 3,
 
   },
   mobile: {
@@ -24,34 +31,36 @@ const responsive = {
 
 
 
-const ProductCarousel = () => {
+const ProductCarousel = ({title}) => {
   return (
 
     <div className="blockbaster_deal">
       <div className="deal_header">
-        <h3>Blockbuster deals</h3>
+        <h3>{title}</h3>
         <h3>See all deals </h3>
       </div>
       <Divider />
 
 
       <Carousel responsive={responsive}>
-        <div className="box1">
-          <img src="https://m.media-amazon.com/images/I/51HnWtX7klL._AC_UY218_.jpg" alt="" />
-        </div>
-        <div className="box1">
-          <img src="https://m.media-amazon.com/images/I/51HnWtX7klL._AC_UY218_.jpg" alt="" />
-        </div>
-        <div className="box1">
-          <img src="https://m.media-amazon.com/images/I/51HnWtX7klL._AC_UY218_.jpg" alt="" />
-        </div>
-        <div className="box1">
-          <img src="https://m.media-amazon.com/images/I/51HnWtX7klL._AC_UY218_.jpg" alt="" />
-        </div>
-        <div className="box1">
-          <img src="https://m.media-amazon.com/images/I/51HnWtX7klL._AC_UY218_.jpg" alt="" />
-        </div>
-      
+        {products.map((product) => {
+          return (
+          
+            <div className="products" key={product.id}>
+              <div className="product_img">
+                <img src={product.detailUrl} alt="product" />
+              </div>
+              <p className="products_name">{product.title.shortTitle}</p>
+              <p className="products_offer" style={{ color: "#  007185" }}>{product.discount}</p>
+              <p className="products_explore">{product.tagline}</p>
+              </div>
+         
+
+          )
+        })}
+
+
+
       </Carousel>
     </div>
 

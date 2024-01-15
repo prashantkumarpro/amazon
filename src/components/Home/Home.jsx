@@ -106,12 +106,9 @@ const Home = () => {
             <Link to="/Mobile">See more</Link>
           </div>
         </div>
-        
-        <ProductCarousel />
-        
-    
-     
 
+        <ProductCarousel title='Blockbuster deals' />
+        <ProductCarousel title='Trending deals' />
         <div className="card-con">
           <div className="card">
             <h3 style={{ textAlign: 'center', fontSize: '18px', marginTop: '5px' }}>Men's clothing</h3>
@@ -189,7 +186,7 @@ const Home = () => {
             <Link to="/Mobile">See more</Link>
           </div>
         </div>
-
+        <ProductCarousel title='Starting ₹999 | Bestselling smartwatches from top brands' />
       </div>
 
     </>
