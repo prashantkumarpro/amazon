@@ -1,19 +1,20 @@
+
+
+.blockbaster_deal {
+    width: 98%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    margin-bottom: 15px;
+
+}
 .carousel-con .box {
     position: relative;
     width: 300px;
     height: 400px;
-
-}
-
-.blockbaster_deal {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    margin: 20px auto;
-    width: 100%;
-    background-color: #FFFFFF;
-
 
 }
 

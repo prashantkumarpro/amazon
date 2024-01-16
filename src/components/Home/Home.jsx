@@ -188,7 +188,7 @@ const Home = () => {
         </div>
         <ProductCarousel title='Starting ₹999 | Bestselling smartwatches from top brands' />
       </div>
-
+      <br />
     </>
   );
 };
