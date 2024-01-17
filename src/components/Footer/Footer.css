@@ -10,6 +10,13 @@
     color: #fff;
     background-color: #354151;
 }
+.footer-container .top span {
+    padding: 12px 15px;
+    text-align: center;
+    color: #fff;
+    background-color: #354151;
+    cursor: pointer;
+}
 
 .footer-container .middile {
     position: relative;
@@ -28,7 +35,7 @@
 .footer-container .middile .mdl_part {
     position: relative;
     display: flex;
-    
+    justify-content: space-around;
 }
 
 .footer-container .middile .mdl_part .mdl_box {

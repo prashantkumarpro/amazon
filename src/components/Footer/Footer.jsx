@@ -1,6 +1,6 @@
 import React from 'react'
 import './Footer.css'
-// import Divider from '@mui/material/Divider';
+import Divider from '@mui/material/Divider';
 const Footer = () => {
   return (
     <div className='footer-container'>
@@ -45,9 +45,9 @@ const Footer = () => {
             <h3>Amazon App Download</h3>
             <h3>Help</h3>
           </div>
-
+         
         </div>
-
+       
       </div>
 
     </div>

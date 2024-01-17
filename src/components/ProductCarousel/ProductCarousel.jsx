@@ -4,6 +4,7 @@ import 'react-multi-carousel/lib/styles.css';
 import './ProductCarousel.css'
 import Divider from '@mui/material/Divider';
 import { products } from './ProductData'
+import { Link } from 'react-router-dom';
 console.log(products)
 const responsive = {
   superLargeDesktop: {
@@ -31,21 +32,27 @@ const responsive = {
 
 
 
-const ProductCarousel = ({title}) => {
+const ProductCarousel = ({ title }) => {
   return (
 
     <div className="blockbaster_deal">
       <div className="deal_header">
         <h3>{title}</h3>
-        <h3>See all deals </h3>
+        <Link>See all deals </Link>
       </div>
       <Divider />
 
 
-      <Carousel responsive={responsive}>
+      <Carousel
+        responsive={responsive}
+        swipeable={false}
+        draggable={true}
+        removeArrowOnDeviceType={["tablet", "mobile"]}
+      >
         {products.map((product) => {
-          return (
           
+          return (
+
             <div className="products" key={product.id}>
               <div className="product_img">
                 <img src={product.detailUrl} alt="product" />
@@ -53,8 +60,8 @@ const ProductCarousel = ({title}) => {
               <p className="products_name">{product.title.shortTitle}</p>
               <p className="products_offer" style={{ color: "#  007185" }}>{product.discount}</p>
               <p className="products_explore">{product.tagline}</p>
-              </div>
-         
+            </div>
+
 
           )
         })}
