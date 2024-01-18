@@ -102,6 +102,21 @@
     color: #D57B55;
 }
 
+.center_img {
+    width: 98%;
+    margin: 15px auto;
+    position: relative;
+    /* margin: 0 0 15px; */
+    background-color: #FFFFFF;
+}
+
+.center_img img {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    height: 100%;
+    object-fit: cover;
+}
 
 
 

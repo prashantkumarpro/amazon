@@ -4,6 +4,9 @@ import { useDataContext } from '../Context/ProductContext';
 import { Link } from 'react-router-dom';
 import Banner from '../Banner/Banner';
 import ProductCarousel from '../ProductCarousel/ProductCarousel';
+import SmartWatchCarousel from '../SmartWatchCarousel/SmartWatchCarousel';
+
+
 
 const Home = () => {
   const { isLoading, mensCloths } = useDataContext();
@@ -186,7 +189,11 @@ const Home = () => {
             <Link to="/Mobile">See more</Link>
           </div>
         </div>
-        <ProductCarousel title='Starting ₹999 | Bestselling smartwatches from top brands' />
+        <ProductCarousel title='Trending deals' />
+        <div className="center_img">
+          <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img24/AmazonPay/JanART/Event-WTS_Creatives/Flight_GW_editorial_2300x646._CB584276567_.jpg" alt="" />
+        </div>
+        <SmartWatchCarousel title='Starting ₹999 | Bestselling smartwatches from top brands'/>
       </div>
       <br />
     </>
