@@ -87,26 +87,21 @@ const Home = () => {
             </div>
             <Link to="/Mobile">See more</Link>
           </div>
-          <div className="card">
-            <h3 style={{ fontSize: '18px', marginTop: '5px' }}>Phones and Accessories</h3>
-            <div className="box-con">
-              <div className="box">
-                <img src="https://images-eu.ssl-images-amazon.com/images/I/81WimZLWH1L._AC_UL232_SR232,232_.jpg" alt="" />
+          <div className="card bg_transparent">
+            
+            <div className="box1">
+              <h3 style={{ fontSize: '18px', marginTop: '5px' }}>ASUS VIVOBOOK</h3>
+              <div className="item_con">
+                <Link> Stylish Everyday Laptops</Link>
+                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/JanART2024_ASUN/115x115._CB584223445_.jpg" alt="image" />
+              </div>
+            </div>
 
-              </div>
-              <div className="box">
-                <img src="https://m.media-amazon.com/images/I/51oMWaW7tKL._AC_UL320_.jpg" alt="" />
-              </div>
+            <div className="box2">
+              <img src="https://m.media-amazon.com/images/S/al-eu-726f4d26-7fdb/16bac034-e089-426c-bf00-228b58692926.jpg" alt="" />
+            
             </div>
-            <div className="box-con">
-              <div className="box">
-                <img src="https://m.media-amazon.com/images/I/41zb0e965jL._AC_SR320,320_.jpg" alt="" />
-              </div>
-              <div className="box">
-                <img src="https://m.media-amazon.com/images/I/41R51TjCz7L._AC_SR320,320_.jpg" alt="" />
-              </div>
-            </div>
-            <Link to="/Mobile">See more</Link>
+
           </div>
         </div>
 
@@ -193,7 +188,7 @@ const Home = () => {
         <div className="center_img">
           <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img24/AmazonPay/JanART/Event-WTS_Creatives/Flight_GW_editorial_2300x646._CB584276567_.jpg" alt="" />
         </div>
-        <SmartWatchCarousel title='Starting ₹999 | Bestselling smartwatches from top brands'/>
+        <SmartWatchCarousel title='Starting ₹999 | Bestselling smartwatches from top brands' />
       </div>
       <br />
     </>

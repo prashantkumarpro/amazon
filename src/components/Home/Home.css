@@ -40,7 +40,7 @@
     padding: 10px;
     width: 100%;
     max-width: 320px;
-    height: 400px;
+    height: 420px;
     background-color: #FFFFFF;
     position: relative;
     margin-bottom: 15px;
@@ -94,12 +94,66 @@
 }
 
 .card-con .card a {
-    color: darkblue;
+    font-size: .84rem;
+    color: #007185;
 
 }
 
 .card-con .card a:hover {
     color: #D57B55;
+}
+
+.card-con .bg_transparent {
+    position: relative;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.card-con .card .box1 {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    margin-bottom: 20px;
+    margin-top: -10px;
+    padding: 10px;
+}
+.card-con .card .box1 .item_con {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    padding: 0 1px;
+   
+ 
+  
+}
+.card-con .card .box1 .item_con img{
+    margin-top: -40px;
+  display: block;
+}
+
+.card-con .card .box2 {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+}
+
+.card-con .card .box2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding: 8px 8px;
+}
+
+.card-con .card .box1 .item_con {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+
 }
 
 .center_img {
