@@ -108,7 +108,6 @@
     background-color: transparent;
     display: flex;
     flex-direction: column;
-
 }
 
 .card-con .card .box1 {
@@ -121,32 +120,34 @@
     margin-top: -10px;
     padding: 10px;
 }
+
 .card-con .card .box1 .item_con {
     position: relative;
     display: flex;
     align-items: flex-start;
     justify-content: space-evenly;
     padding: 0 1px;
-   
- 
-  
+
 }
-.card-con .card .box1 .item_con img{
+
+.card-con .card .box1 .item_con img {
     margin-top: -40px;
-  display: block;
+    display: block;
+    margin-left:12px;
 }
 
 .card-con .card .box2 {
     position: relative;
     display: flex;
     align-items: flex-start;
+    margin: 0px 8px;
 }
 
 .card-con .card .box2 img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    padding: 8px 8px;
+    margin-top: 15px;
 }
 
 .card-con .card .box1 .item_con {
@@ -172,7 +173,9 @@
     object-fit: cover;
 }
 
-
+@media (max-width:1024px) {
+    
+}
 
 @media (max-width:600px) {
     .home_image {
@@ -183,10 +186,18 @@
         padding: 10px;
         width: 100%;
         max-width: 400px;
-        height: 400px;
+        height: 420px;
         background-color: #FFFFFF;
         position: relative;
         margin-bottom: 15px;
+    }
+    .card-con .bg_transparent{
+        background-color: transparent;
+    }
+    .card-con .card .box1 .item_con img {
+        margin-top: -40px;
+        display: block;
+        margin-left: 65px;
     }
 
 
@@ -194,13 +205,15 @@
 
 @media (max-width:430px) {
 
-    .card-con .card {
+    .card-con .bg_transparent {
         padding: 10px;
-        width: 100%;
-        max-width: 380px;
-        height: 400px;
-        background-color: #FFFFFF;
+        height: auto;
         position: relative;
         margin-bottom: 15px;
+    }
+    .card-con .card .box1 .item_con img {
+        margin-top: -40px;
+        display: block;
+        /* margin-left: 0; */
     }
 }
