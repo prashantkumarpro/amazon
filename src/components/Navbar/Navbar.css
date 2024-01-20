@@ -128,7 +128,7 @@ nav .nav-part1 {
     height: 10px;
     padding: 20px 10px;
     outline: none;
-   
+
 }
 
 .nav-part1 .search-box {
@@ -322,6 +322,11 @@ a {
 }
 
 @media screen and (max-width: 600px) {
+    .nav {
+        padding: 0;
+        margin: 0;
+    }
+
     .nav-part2 a:nth-child(5) {
         display: none;
     }
@@ -330,12 +335,30 @@ a {
         float: right;
         display: block;
     }
-}
 
+    .nav-part1 .left .nav-location {
+        display: none;
+    }
 
+    .nav-part1 .right .country {
+        display: none;
 
-@media (max-width:600px) {
-    
+    }
 
-    
+    .nav-part1 .right .account-types {
+        display: none;
+    }
+
+    .nav-part1 .right .nav-order {
+        display: none;
+    }
+
+    .nav-part2 .shop-link {
+        display: none;
+    }
+
+    .nav-part2 .right .right-con {
+        width: 320px;
+    }
+
 }
