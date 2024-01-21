@@ -45,7 +45,8 @@ const ProductCarousel = ({ title }) => {
 
       <Carousel
         responsive={responsive}
-        swipeable={false}
+        swipeable={true}
+        autoPlay={true}
         draggable={true}
         removeArrowOnDeviceType={["tablet", "mobile"]}
       >

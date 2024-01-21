@@ -86,3 +86,20 @@
     font-size: .84rem;
     padding: 2px;
 }
+
+@media (max-width:600) {
+    .products {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .blockbaster_deal .product_img {
+        margin: 0 auto;
+        padding: 20PX;
+        width: 250PX;
+        height: 250PX;
+        background-color: #F7F8F8;
+    }
+}
