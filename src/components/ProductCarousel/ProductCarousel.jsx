@@ -46,8 +46,10 @@ const ProductCarousel = ({ title }) => {
       <Carousel
         responsive={responsive}
         swipeable={true}
-        autoPlay={true}
         draggable={true}
+        autoPlaySpeed={4000}
+        infinite={true}
+        keyBoardControl={true}
         removeArrowOnDeviceType={["tablet", "mobile"]}
       >
         {products.map((product) => {

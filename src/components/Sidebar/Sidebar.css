@@ -53,3 +53,23 @@
     overflow-y: scroll;
     overflow-x: hidden;
 }
+
+@media (max-width:600px) {
+    .sidebar-con .content {
+        width: 100%;
+        max-width: 290px;
+        height: 100%;
+        background-color: #FFFFFF;
+        position: fixed;
+    }
+
+    .sidebar-con .close-sidebar {
+        position: absolute;
+        left: 290px;
+        top: 2px;
+        font-size: 3rem;
+        color: #FFF;
+        cursor: pointer;
+    }
+
+}
