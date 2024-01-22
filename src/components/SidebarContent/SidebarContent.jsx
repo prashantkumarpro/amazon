@@ -1,22 +1,28 @@
 import React from 'react'
 import './SidebarContent.css'
-// import { MobileList } from '../ProductList/MobileList';
-import {useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 
-const SidebarConten = ({ title, one, two, three, four }) => {
+const SidebarContent = ({ title, one, two, three, four, setSideBar }) => {
     const navigate = useNavigate();
+
     const handleOnClick = (title, item) => {
-        console.log(item)
-        if(item.includes('Mobiles')){
-            navigate('/Mobile')
+
+        if (item.toLowerCase().includes('mobiles, computers')) {
+            navigate('Mobile')
+            setSideBar(false)
         }
-        
-        };
+        else if (item.toLowerCase().includes("men's fashion") || item.toLowerCase().includes("Women's Fashion")) {
+            navigate('/Product')
+            setSideBar(false)
+        }
+
+    };
+
 
     return (
 
-        <div className='content-con'>
+        <div className='content-container'>
             <h3>{title}</h3>
             <ul>
                 <li onClick={() => handleOnClick(title, one)}>{one}<span><i className="ri-arrow-right-s-line"></i></span></li>
@@ -29,4 +35,4 @@ const SidebarConten = ({ title, one, two, three, four }) => {
     )
 }
 
-export default SidebarConten
+export default SidebarContent

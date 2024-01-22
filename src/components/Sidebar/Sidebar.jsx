@@ -1,7 +1,9 @@
 import { useEffect, useRef } from 'react'
 import './Sidebar.css'
 import { motion } from 'framer-motion'
-import SidebarConten from '../SidebarContent/SidebarConten'
+import SidebarContent from '../SidebarContent/SidebarContent'
+
+
 
 const Sidebar = ({ setSideBar, Sidebar }) => {
 
@@ -19,7 +21,7 @@ const Sidebar = ({ setSideBar, Sidebar }) => {
   return (
     <>
       <motion.div
-        className='sidebar-con'
+        className='sidebar-container'
         ref={ref}
         initial={{ x: -500, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
@@ -29,21 +31,24 @@ const Sidebar = ({ setSideBar, Sidebar }) => {
             <i className="ri-account-circle-fill account-icon"></i>
             <h3>Hello, Sign In</h3>
           </div>
-          <div className="sidebar-content-con">
+          <div className="sidebar-content-container">
 
-            <SidebarConten
+            <SidebarContent
+              setSideBar={setSideBar}
               title='Digital Content And Devices'
               one='Echo & Alexa'
               two='Kindle E-Readers & eBooks'
               three='Amazon Prime Video'
               four='Amazon Audiobooks' />
-            <SidebarConten
+            <SidebarContent
+              setSideBar={setSideBar}
               title='Shop By Category'
               one='Mobiles, Computers'
               two='TV, Appliances, Electronics'
               three="Men's Fashion"
               four="Women's Fashion" />
-            <SidebarConten
+            <SidebarContent
+              setSideBar={setSideBar}
               title='Programs & Features'
               one='Amazon Pay'
               two='Gift Cards & Mobile Recharges'

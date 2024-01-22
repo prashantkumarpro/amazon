@@ -122,8 +122,8 @@ const Navbar = ({ cart }) => {
                 </div>
                 <div className="shop-container">
                     <ul className="shop-link">
-                        <li className='border'> <Link to="/Mobile"> Mobile</Link></li>
-                        <li className='border'> <Link to="prime"> Prime</Link></li>
+                        <li className='border'> <Link> Mobile</Link></li>
+                        <li className='border'> <Link> Prime</Link></li>
                         <li className='border'> <Link> Prime</Link></li>
                         <li className='border' > <Link> Amazon miniTV</Link></li>
                         <li className='border'> <Link> Sell</Link></li>

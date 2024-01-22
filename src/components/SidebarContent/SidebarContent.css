@@ -1,14 +1,14 @@
- .content-con  {
+ .content-container  {
    border-bottom: 1.5px solid #E4E4E7;
 }
- .content-con h3 {
+ .content-container h3 {
     font-size: 18px;
     padding: 13px 20px 5px 36px;
     font-weight: 600;
 }
 
 
- .content-con ul li {
+ .content-container ul li {
     padding: 13px 20px 13px 36px;
     display: flex;
     align-items: center;
@@ -17,15 +17,8 @@
 }
 
 
-.content-con ul li:hover {
+.content-container ul li:hover {
     background-color: #E4E4E7;
     cursor: pointer;
 }
 
-@media (max-width:600) {
-    .sidebar-content-con .content-con > h3 {
-        font-size: 2.5vw;
-        padding: 13px 20px 5px 36px;
-        font-weight: 600;
-    }
-}
