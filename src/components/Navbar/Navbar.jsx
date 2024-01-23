@@ -118,11 +118,11 @@ const Navbar = ({ cart }) => {
             <div className="nav-part2">
                 <div className="left border" onClick={() => setSideBar(!sideBar)}>
                     <i className="ri-menu-line"></i>
-                    <Link to="/Product">All</Link>
+                    <Link>All</Link>
                 </div>
                 <div className="shop-container">
                     <ul className="shop-link">
-                        <li className='border'> <Link> Mobile</Link></li>
+                        <li className='border'> <Link to='/Mobile'> Mobile</Link></li>
                         <li className='border'> <Link> Prime</Link></li>
                         <li className='border'> <Link> Prime</Link></li>
                         <li className='border' > <Link> Amazon miniTV</Link></li>
