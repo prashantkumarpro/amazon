@@ -91,12 +91,12 @@ const Navbar = ({ cart }) => {
                                 })}
                             </select>
                         </div>
-                        <div className="account-types border">
+                        <Link to="/Login" className="account-types border">
                             <span className='line-1'>Hello,Prashant</span>
                             <select className='line-2'>
                                 <option>Account & List type</option>
                             </select>
-                        </div>
+                        </Link>
 
                         <div className="nav-order">
                             <span className='line-1'>Returns</span>

@@ -58,8 +58,11 @@
     margin: 0 auto;
     width: 50%;
     height: 80vh;
-    margin-top: 3rem;
     text-align: center;
     display: flex;
     flex-direction: column;
+}
+.empty-cart-con h3{
+    margin-top: 30px;
+    font-size: 1.2rem;
 }
