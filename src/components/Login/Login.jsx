@@ -13,13 +13,23 @@ const Login = () => {
         <h3>Sign in</h3>
         <p htmlFor="">Email or mobile phone number </p>
         <input type="text" />
-        <input type="button" value="Continue" />
+        <button type="submit" value="Continue" >Continue</button>
         <p>By continuing, you agree to Amazon's <span>Conditions of Use </span> and <span> Privacy Notice.</span></p>
         <div className="help">
           <i class="ri-arrow-right-s-fill"></i>
           <span>Need help?</span>
         </div>
+        <p>Buying for work?</p>
+        <p>Shop on Amazon Business</p>
       </form>
+      
+      <div className="newtoamazon">
+      <span className='left-line'></span>
+      <span className='text'>New to Amazon?</span>
+      <span className='right-line'></span>
+      </div>
+     
+     
     </div>
   )
 }
