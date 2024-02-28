@@ -19,7 +19,7 @@
     overflow: hidden;
 }
 
-.log {
+.logo {
     width: 110px;
     height: 724px;
     background: url(https://m.media-amazon.com/images/S/sash/mPGmT0r6IeTyIee.png);
@@ -36,8 +36,14 @@
     color: #030303;
 }
 
-.login-form {
+.form_container {
     max-width: 360px;
+    /* border: 2px solid red; */
+    margin-top: 0;
+}
+
+.login-form {
+    width: 100%;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
@@ -60,11 +66,10 @@
     padding: 6px;
     outline: none;
     border: 1.2px solid #656565;
-    ;
 }
 
 .login-form button[type=submit] {
-    background-color: #F7CA00;
+    background-color: #f8ce12d7;
     outline: none;
     border: none;
     padding: 8px 12px;
@@ -73,6 +78,11 @@
     cursor: pointer;
     width: 100%;
     margin-bottom: 18px;
+}
+
+.login-form button[type=submit]:hover {
+    background-color: #F7CA00;
+ 
 }
 
 .login-form p:nth-of-type(1) {
@@ -134,35 +144,88 @@
 }
 
 .newtoamazon {
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 360px;
+    color: #333;
     width: 100%;
-    opacity: 0.8;
+    opacity: 0.6;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
 }
+
 
 
 
 .login-container .left-line {
+    display: inline-flex;
     width: 100%;
     height: 1px;
-    /* background-color: red; */
-    background-color: #a5a4a4;
-    opacity: 0.8;
+    background-color: #333;
+    opacity: 0.5;
 
 }
 
 .login-container .right-line {
-    width: 100%;
+    display: inline-flex;
     height: 1px;
-    background-color: #a5a4a4;
+    width: 100%;
+    background-color: #333;
+    opacity: 0.5;
 
 }
 
 .newtoamazon .text {
     width: 100%;
+    color: black;
     font-size: 12px;
+    text-align: center;
+}
+
+.craete_account {
     color: #030303;
+    width: 100%;
+    border: 1.5px solid #dfdfdf;
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 8px;
+    padding: 6px 8px;
+    cursor: pointer;
+}
+
+
+.craete_account a {
+    color: black;
+    font-size: 13px;
+}
+
+.craete_account:hover {
+    background-color: #fafafa;
+}
+
+.bottom {
+    width: 100%;
+    background-color: #FDFDFD;
+    border-top: 1.5px solid #f2f2f2;
+    margin: 20px 0px;
+    text-align: center;
+    padding: 10px 0px;
+}
+
+.bottom span {
+    font-size: 11px;
+    color: #0066c0;
+    display: inline-flex;
+    align-items: center;
+   margin-left: 12px;
+}
+
+.bottom span:hover {
+    color: #c40000;
+    cursor: pointer;
+}
+
+.bottom p {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 16px;
+    opacity: 0.8;
 }
