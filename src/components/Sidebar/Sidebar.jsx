@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react'
 import './Sidebar.css'
 import { motion } from 'framer-motion'
 import SidebarContent from '../SidebarContent/SidebarContent'
-
+import { Link } from 'react-router-dom'
 
 
 const Sidebar = ({ setSideBar, Sidebar }) => {
@@ -27,10 +27,10 @@ const Sidebar = ({ setSideBar, Sidebar }) => {
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: .2 }}>
         <div className="content">
-          <div className="account">
+          <Link to="/Login" className="account">
             <i className="ri-account-circle-fill account-icon"></i>
             <h3>Hello, Sign In</h3>
-          </div>
+          </Link >
           <div className="sidebar-content-container">
 
             <SidebarContent
