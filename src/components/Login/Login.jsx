@@ -29,7 +29,7 @@ const Login = () => {
           <span className='right-line'></span>
         </p>
         <div className="craete_account">
-          <Link className=''>Create your Amazon account</Link>
+          <Link to="/Registration">Create your Amazon account</Link>
         </div>
 
 

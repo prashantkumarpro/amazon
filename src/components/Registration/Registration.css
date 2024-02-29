@@ -1,0 +1,63 @@
+.form_container .login-form p:nth-of-type(2){
+    font-size: 12px;
+    padding: 2px;
+    margin-bottom: 0px;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    font-weight: 600;
+}
+.form_container .login-form input[type='Number']{
+    margin-bottom: 20px;
+}
+.form_container .login-form p:nth-of-type(3){
+    font-size: 12px;
+    padding: 2px;
+    margin-bottom: 0px;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    font-weight: 600;
+}
+.form_container .login-form p:nth-of-type(4){
+       font-size: 12px;
+       margin-top: -5px;
+       /* padding: 0px 5px; */
+       /* margin-bottom: 1px; */
+       letter-spacing: 0.2px;
+       color: #333;
+       text-decoration: none;
+       font-weight: 600;
+}
+.form_container .login-form p:nth-of-type(5){
+    font-size: 12px;
+    padding: 0px 8px;
+    margin-bottom: 15px;
+    margin-top: -9px;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+}
+.form_container .login-form p:nth-of-type(6){
+    font-size: 13px;
+    padding: 2px;
+    margin-bottom: 0px;
+    letter-spacing: 0.2px;
+}
+.form_container .login-form p:nth-of-type(7){
+    font-size: 13px;
+    padding: 0ox 5px;
+    /* margin-bottom: 10px; */
+    line-height: 18px;
+
+}
+.form_container .login-form p:nth-of-type(8){
+    font-size: 13px;
+    margin-bottom: 18px;
+    line-height: 18px;
+  
+}
+.form_container .login-form p:nth-of-type(9){
+    font-size: 13px;
+    padding: 2px;
+    margin-bottom: 0px;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+}

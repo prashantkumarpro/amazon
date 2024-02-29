@@ -82,7 +82,7 @@
 
 .login-form button[type=submit]:hover {
     background-color: #F7CA00;
- 
+
 }
 
 .login-form p:nth-of-type(1) {
@@ -107,6 +107,9 @@
 }
 
 .login-form span:hover {
+    text-decoration: underline;
+    text-underline-offset: 1;
+    transition: .3s;
     color: #c40000;
     cursor: pointer;
 }
@@ -139,6 +142,9 @@
 }
 
 .login-form p:nth-of-type(4):hover {
+    text-decoration: underline;
+    text-underline-offset: 1;
+    transition: .3s;
     color: #c40000;
     cursor: pointer;
 }
@@ -215,10 +221,13 @@
     color: #0066c0;
     display: inline-flex;
     align-items: center;
-   margin-left: 12px;
+    margin-left: 10px;
 }
 
 .bottom span:hover {
+    text-decoration: underline;
+    text-underline-offset: 1;
+    transition: .3s;
     color: #c40000;
     cursor: pointer;
 }

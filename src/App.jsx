@@ -12,6 +12,8 @@ import SingleProductPage from './components/SingleProductPage/SingleProductPage.
 import Stars from './components/Stars/Stars.jsx';
 import ProductList from './components/ProductList/ProductList.jsx';
 import Login from './components/Login/Login.jsx';
+import Registration from './components/Registration/Registration.jsx';
+
 
 
 const App = () => {
@@ -36,6 +38,7 @@ const App = () => {
           <Route path="*" element={<ErrorPage />} />
         </Route>
         <Route path='/Login' element={<Login />} />
+        <Route path='/Registration' element={<Registration />} />
       </Routes>
     </BrowserRouter>
   );
