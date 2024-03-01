@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom'
 const Login = () => {
   return (
     <div className='login-container'>
-      <Link className="header">
-        <div className="logo">
+      <div className="header">
+        <Link to="/" className="logo">
           <p className='dot-in'>.in</p>
-        </div>
-      </Link>
+        </Link>
+      </div>
       <div className="form_container">
         <form className='login-form'>
           <h3>Sign in</h3>

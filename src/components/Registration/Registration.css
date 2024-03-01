@@ -29,11 +29,23 @@
 }
 .form_container .login-form p:nth-of-type(5){
     font-size: 12px;
+    margin-bottom: 20px;
+    margin-top: -5px;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    color: #333;
+
+}
+.form_container .login-form p:nth-of-type(5) span{
+    font-size: 12px;
     padding: 0px 8px;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
     margin-top: -9px;
     line-height: 18px;
     letter-spacing: 0.2px;
+    color: #333;
+    text-decoration: none;
+    cursor: auto;
 }
 .form_container .login-form p:nth-of-type(6){
     font-size: 13px;
@@ -60,4 +72,5 @@
     margin-bottom: 0px;
     line-height: 18px;
     letter-spacing: 0.2px;
+   
 }
