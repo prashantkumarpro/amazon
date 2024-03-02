@@ -15,16 +15,37 @@ const Registration = () => {
   const [clientNumErr, setClientNumErr] = useState("")
   const [clientPasswordErr, setClientPasswordErr] = useState("")
 
+  const nameHandler = (e) => {
+    setClientName(e.target.value);
+    setClientNameErr("")
+  }
+  const numHandler = (e) => {
+    setClientNum(e.target.value)
+    setClientNumErr("")
 
+  }
+  const handlePassword = (e) => {
+    setClientPassword(e.target.value)
+    setClientPasswordErr('')
+  }
+
+  // submit handler function 
   const handlerFunction = (e) => {
     e.preventDefault()
     if (!clientName) {
-      setClientNameErr("Please enter the name")
-    } else {
-      setClientNameErr("")
+      setClientNameErr("Enter your name.")
     }
-    setClientName("")
-    console.log(clientName)
+    if (!clientNum) {
+      setClientNumErr("Enter your mobile number.")
+
+    }
+    if (!clientPassword) {
+      setClientPasswordErr("Enter your password.")
+    } else {
+      if (clientPassword < 6) {
+        setClientPasswordErr("Passwords must be at least 6 characters.")
+      }
+    }
   }
   return (
     <div className='login-container'>
@@ -39,27 +60,35 @@ const Registration = () => {
 
           <p>Your name </p>
           <input
-            onChange={(e) => setClientName(e.target.value)}
+            onChange={nameHandler}
             type="text"
             placeholder='First and last name' />
           {clientNameErr && (
-            <p>{clientNameErr}</p>
+            <p style={{ color: 'red', marginTop: '-10px' }}><span style={{ fontStyle: "italic", color: 'red', fontWeight: '900', fontSize: '12px' }}>!</span> {clientNameErr}</p>
           )}
           <p>Mobile number</p>
           <input
+            onChange={numHandler}
             type="text"
             placeholder='Mobile Number' />
-          <p className='error' style={{ display: 'none' }}>The mobile number you entered does not seem to be valid</p>
-
+          {clientNumErr && (
+            <p style={{ color: 'red', marginTop: '-10px' }}><span style={{ fontStyle: "italic", color: 'red', fontWeight: '900', fontSize: '12px' }}>!</span> {clientNumErr}</p>
+          )}
           <p>Password</p>
           <input
+            onChange={handlePassword}
             type="Password"
             placeholder='At least 6 characters' />
-          <p><span style={{
-            fontStyle: 'italic', color: "#146bb6", fontWeight: "900",
-            marginLeft: '-8px'
-          }}>i</span> <span> Passwords must be at least 6 characters.</span></p>
 
+          {clientPasswordErr && clientPassword.length < 6 && (
+            <p style={{ color: '#c40000', marginTop: '-10px' }}><span style={{ fontStyle: "italic", color: '#c40000', fontWeight: '900', fontSize: '12px' }}>!</span> {clientPasswordErr}</p>
+          )}
+          {!clientPasswordErr && (
+            <p style={{ fontStyle: 'italic', color: "#333", marginBottom: '20px' }}>
+              <span style={{ color: "#70BAD5", fontWeight: "900", cursor: "default", fontSize: '14px' }}>i</span>
+              <span style={{ color: "#333", fontWeight: "500", textDecoration: 'none', fontStyle: 'normal', cursor: "text", marginLeft: '8px' }} > Passwords must be at least 6 characters.</span>
+            </p>
+          )}
           <p>To verify your number, we will send you a text message with a temporary code. Message and data rates may apply.</p>
           <button type="submit" onClick={handlerFunction} >Verify Mobile Number</button>
 
