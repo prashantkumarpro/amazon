@@ -41,7 +41,7 @@ const Registration = () => {
     }
     if (!clientPassword) {
       setClientPasswordErr("Enter your password.")
-    } else {
+    }  else{
       if (clientPassword < 6) {
         setClientPasswordErr("Passwords must be at least 6 characters.")
       }
@@ -64,7 +64,7 @@ const Registration = () => {
             type="text"
             placeholder='First and last name' />
           {clientNameErr && (
-            <p style={{ color: 'red', marginTop: '-10px' }}><span style={{ fontStyle: "italic", color: 'red', fontWeight: '900', fontSize: '12px' }}>!</span> {clientNameErr}</p>
+            <p style={{ color: '#c40000', marginTop: '-10px' }}><span style={{ fontStyle: "italic", color: '#c40000', fontWeight: '900', fontSize: '12px' }}>!</span> {clientNameErr}</p>
           )}
           <p>Mobile number</p>
           <input
@@ -72,7 +72,7 @@ const Registration = () => {
             type="text"
             placeholder='Mobile Number' />
           {clientNumErr && (
-            <p style={{ color: 'red', marginTop: '-10px' }}><span style={{ fontStyle: "italic", color: 'red', fontWeight: '900', fontSize: '12px' }}>!</span> {clientNumErr}</p>
+            <p style={{ color: '#c40000', marginTop: '-10px' }}><span style={{ fontStyle: "italic", color: '#c40000', fontWeight: '900', fontSize: '12px' }}>!</span> {clientNumErr}</p>
           )}
           <p>Password</p>
           <input
@@ -80,11 +80,11 @@ const Registration = () => {
             type="Password"
             placeholder='At least 6 characters' />
 
-          {clientPasswordErr && clientPassword.length < 6 && (
+          {clientPasswordErr && (
             <p style={{ color: '#c40000', marginTop: '-10px' }}><span style={{ fontStyle: "italic", color: '#c40000', fontWeight: '900', fontSize: '12px' }}>!</span> {clientPasswordErr}</p>
           )}
           {!clientPasswordErr && (
-            <p style={{ fontStyle: 'italic', color: "#333", marginBottom: '20px' }}>
+            <p className='passwordChar' style={{ fontStyle: 'italic', color: "#333", marginBottom: '20px' }}>
               <span style={{ color: "#70BAD5", fontWeight: "900", cursor: "default", fontSize: '14px' }}>i</span>
               <span style={{ color: "#333", fontWeight: "500", textDecoration: 'none', fontStyle: 'normal', cursor: "text", marginLeft: '8px' }} > Passwords must be at least 6 characters.</span>
             </p>
