@@ -33,16 +33,16 @@ const Registration = () => {
     e.preventDefault()
     if (!clientName) {
       setClientNameErr("Enter your name.")
-      return false;
+
     }
     if (!clientNum) {
       setClientNumErr("Enter your mobile number.")
-      return false;
+
 
     }
     if (!clientPassword) {
       setClientPasswordErr("Enter your password.")
-      return false;
+ 
     }else{
       if (clientPassword.length < 6) {
         setClientPasswordErr("Passwords must be at least 6 characters.")
