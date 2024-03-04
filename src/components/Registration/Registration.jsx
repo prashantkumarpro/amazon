@@ -8,8 +8,6 @@ const Registration = () => {
   const [clientNum, setClientNum] = useState("")
   const [clientPassword, setClientPassword] = useState("")
 
-  // const [clientEmail, setClientEmail] = useState("")
-
   // client Error msg 
   const [clientNameErr, setClientNameErr] = useState("")
   const [clientNumErr, setClientNumErr] = useState("")
@@ -27,24 +25,35 @@ const Registration = () => {
   const handlePassword = (e) => {
     setClientPassword(e.target.value)
     setClientPasswordErr('')
+    return false;
   }
 
   // submit handler function 
-  const handlerFunction = (e) => {
+  const handleRegistration = (e) => {
     e.preventDefault()
     if (!clientName) {
       setClientNameErr("Enter your name.")
+      return false;
     }
     if (!clientNum) {
       setClientNumErr("Enter your mobile number.")
+      return false;
 
     }
     if (!clientPassword) {
       setClientPasswordErr("Enter your password.")
-    }  else{
-      if (clientPassword < 6) {
+      return false;
+    }else{
+      if (clientPassword.length < 6) {
         setClientPasswordErr("Passwords must be at least 6 characters.")
+        return false;
       }
+    }
+    if(clientName && clientNum && clientPassword){
+       console.table(`clientName: ${clientName}, clietnNumber: ${clientNum}, clientPassword:${clientPassword}`)
+       setClientName("")
+       setClientNum("")
+       setClientPassword("")
     }
   }
   return (
@@ -61,6 +70,7 @@ const Registration = () => {
           <p>Your name </p>
           <input
             onChange={nameHandler}
+            value={clientName}
             type="text"
             placeholder='First and last name' />
           {clientNameErr && (
@@ -69,6 +79,7 @@ const Registration = () => {
           <p>Mobile number</p>
           <input
             onChange={numHandler}
+            value={clientNum}
             type="text"
             placeholder='Mobile Number' />
           {clientNumErr && (
@@ -77,6 +88,7 @@ const Registration = () => {
           <p>Password</p>
           <input
             onChange={handlePassword}
+            value={clientPassword}
             type="Password"
             placeholder='At least 6 characters' />
 
@@ -90,19 +102,15 @@ const Registration = () => {
             </p>
           )}
           <p>To verify your number, we will send you a text message with a temporary code. Message and data rates may apply.</p>
-          <button type="submit" onClick={handlerFunction} >Verify Mobile Number</button>
+          <button type="submit" onClick={handleRegistration} >Verify Mobile Number</button>
 
-          <p>Already have an account? <span>Sign in</span> <i className="ri-arrow-right-s-fill"></i></p>
+          <p>Already have an account? <Link to="/Login"><span>Sign in</span><i className="ri-arrow-right-s-fill" style={{color:'#333'}}></i></Link></p>
 
           <p>Buying for work? <span>Create a free business account </span> <i className="ri-arrow-right-s-fill"></i></p>
 
           <p>By creating an account or logging in, you agree to Amazon’s<span> Conditions of Use </span>and<span> Privacy Policy.</span></p>
 
         </form>
-
-
-
-
       </div>
       <div className="bottom">
         <div className="part1">
