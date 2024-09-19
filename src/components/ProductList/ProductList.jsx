@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './ProductList.css'
 import { Link } from 'react-router-dom';
 import { useFilterDataContext } from '../Context/FilterProductContext'
@@ -7,6 +7,8 @@ import { ToastContainer, toast } from 'react-toastify';
 
 
 const ProductList = ({ cart, setCart }) => {
+  const [conversionRate, setConversionRate] = useState(0);
+
   const {
     filter_data,
     sortBy,
@@ -16,13 +18,15 @@ const ProductList = ({ cart, setCart }) => {
     handlePricesClick,
     filters: { text },
     filterValueHandler,
+
   } = useFilterDataContext()
 
 
-  const addToCart = (id, title, price, imageUrl, details) => {
+  const addToCart = (id, title, price, image, description) => {
     const obj = {
-      id, title, price, imageUrl, details
+      id, title, price, image, description
     }
+
     setCart([...cart, obj])
     toast.success('item added!', {
       position: "top-right",
@@ -36,6 +40,22 @@ const ProductList = ({ cart, setCart }) => {
     });
 
   }
+
+  // Fetch the conversion rate from USD to INR
+  const fetchConversionRate = async () => {
+    try {
+      const response = await fetch('https://api.exchangerate-api.com/v4/latest/USD'); // Example API
+      const data = await response.json();
+      console.log(data)
+      setConversionRate(data.rates.INR); // Set INR conversion rate
+    } catch (error) {
+      console.error("Error fetching conversion rate:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchConversionRate(); // Fetch the conversion rate when the component mounts
+  }, []);
   return (
     <>
 
@@ -126,9 +146,9 @@ const ProductList = ({ cart, setCart }) => {
 
                     <p>{product.title}</p>
                     {/* <small>$</small> */}
-                    <strong className='price'>$ {product.price}</strong>
+                    <strong className='price'>₹ {(product.price * conversionRate).toFixed(0)}</strong>
                     <button
-                      onClick={() => addToCart(product.id, product.title, product.price, product.imageUrl, product.details)}
+                      onClick={() => addToCart(product.id, product.title, product.price * conversionRate, product.image, product.description)}
                     >Add to Cart</button>
 
                   </div>

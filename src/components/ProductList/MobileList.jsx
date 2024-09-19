@@ -37,7 +37,7 @@ export const MobileList = ({ cart, setCart }) => {
             // filter by color
             const filteredColor = products.filter((product) => product.color === filterColer);
             setData(() => filteredColor)
-            console.log(filteredColor)
+          
         } else {
 
             setData(() => products)
@@ -46,10 +46,11 @@ export const MobileList = ({ cart, setCart }) => {
 
     }, [brandName, products, filterAmount, filterColer, searchQuery])
 
-    const addToCart = (id, title, price, imageUrl, details) => {
+    const addToCart = (id, title, price, image, description) => {
         const obj = {
-            id, title, price, imageUrl, details
+            id, title, price, image, description
         }
+    
         setCart([...cart, obj])
         toast.success('item added!', {
             position: "top-right",
@@ -140,16 +141,16 @@ export const MobileList = ({ cart, setCart }) => {
                             <div className='box'
                                 key={product.id}>
                                 <Link
-                                    to={`/SingleProduct/${product.id}`}
+                                    to={`/MobileSingle/${product.id}`}
                                     className="product-img">
 
-                                    <img src={product.imageUrl} alt="product-image" />
+                                    <img src={product.image} alt="product-image" />
                                 </Link>
                                 <div className="product-ditels"></div>
                                 <h3>{product.name}</h3>
                                 <p className='price'>₹ {product.price}</p>
                                 <button
-                                    onClick={() => addToCart(product.id, product.title, product.price, product.imageUrl, product.details)}
+                                    onClick={() => addToCart(product.id, product.title, product.price, product.image, product.description)}
                                 >Add to Cart</button>
                             </div >
                         ))}

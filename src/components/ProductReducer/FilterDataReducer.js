@@ -8,7 +8,7 @@ const FilterDataReducer = (state, action) => {
                 ...state,
                 filter_data: [...action.payload],
                 all_data: [...action.payload],
-
+                
             };
 
         case "SORT_FILTER_DATA":

@@ -31,7 +31,7 @@ export const DataProvider = ({ children }) => {
                 throw new Error('Network response was not ok');
             }
             const products = await response.json()
-  
+          
             dispatch({ type: 'MY_API_DATA', payload: products })
         } catch (error) {
             dispatch({ type: 'API_ERROR' })
@@ -53,6 +53,7 @@ export const DataProvider = ({ children }) => {
             dispatch({ type: 'SINGLE_PRODUCT_DATA', payload: singleProduct });
         } catch (error) {
             dispatch({ type: 'SINGLE_API_ERROR' })
+            
         }
     }
     useEffect(() => {
@@ -60,7 +61,6 @@ export const DataProvider = ({ children }) => {
         fetchProducts(API)
     }, [API]);
 
-    // const contextValue = { ...state,  fetchSingleProduct }
 
     return (
         <DataContext.Provider value={{ ...state, fetchSingleProduct }}>

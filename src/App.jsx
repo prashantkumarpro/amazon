@@ -13,6 +13,7 @@ import Stars from './components/Stars/Stars.jsx';
 import ProductList from './components/ProductList/ProductList.jsx';
 import Login from './components/Login/Login.jsx';
 import Registration from './components/Registration/Registration.jsx';
+import MobileSingle from './components/MobileSingle/MobileSingle.jsx';
 
 
 
@@ -34,6 +35,7 @@ const App = () => {
           <Route path="Result/:queryResult" element={<Result cart={cart} setCart={setCart} data={data} />} />
           <Route path="Cart" element={<Cart cart={cart} setCart={setCart} />} />
           <Route path="/SingleProductPage/:ProductId" element={<SingleProductPage cart={cart} setCart={setCart} />} />
+          <Route path="/MobileSingle/:MobileId" element={<MobileSingle cart={cart} setCart={setCart} />} />
           <Route path="/Stars" element={<Stars />} />
           <Route path="*" element={<ErrorPage />} />
         </Route>

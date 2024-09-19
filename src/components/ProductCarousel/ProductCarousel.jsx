@@ -5,7 +5,7 @@ import './ProductCarousel.css'
 import Divider from '@mui/material/Divider';
 import { products } from './ProductData'
 import { Link } from 'react-router-dom';
-console.log(products)
+
 const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.

@@ -69,19 +69,19 @@ const Result = ({ cart, setCart }) => {
           <ul>
             {filterData.map(product => (
               <div
-                className='box'
+                className='item-box'
                 key={product.id}>
 
                 <Link
                   to={`/SingleProduct/${product.id}`}
                   className="product-img">
-                  <img src={product.imageUrl} alt="product-image" />
+                  <img src={product.image} alt="product-image" />
                 </Link>
                 <h3>{product.name}</h3>
 
                 <p className='price'>₹ {product.price}</p>
                 <button
-                  onClick={() => addToCart(product.id, product.title, product.price, product.imageUrl, product.details)}
+                  onClick={() => addToCart(product.id, product.title, product.price, product.image, product.details)}
                 >Add to Cart</button>
               </div >
             ))}
@@ -89,7 +89,7 @@ const Result = ({ cart, setCart }) => {
         <div style={{
           width: '100%',
           height: '100vh',
-          margin: '20px'
+          padding: '20px'
         }}>
           <h1
             style={{

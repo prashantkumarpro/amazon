@@ -16,15 +16,9 @@ const SingleProductPage = ({ cart, setCart }) => {
     fetchSingleProduct(`${API}/${ProductId}`)
   }, [ProductId])
 
-  const {
-    category,
-    description,
-    id,
-    image,
-    price,
-    title,
-    rating } = singleProduct
-    
+  const { description, id, image, price, title, rating } = singleProduct
+
+
   // Check if rating is defined before destructuring
   const { rate, count } = rating || {};
 
@@ -75,9 +69,9 @@ const SingleProductPage = ({ cart, setCart }) => {
         </div>
         <div className="product-des">
           <h3>{title}</h3>
-          <Stars stars={rate} reviews={count}/>
+          <Stars stars={rate} reviews={count} />
           <p className='detail'>{description}</p>
-          <p className='price'>₹ {price}</p>
+          <p className='price'>$ {price}</p>
           <button
             onClick={() => addToCart(id, title, price, image)}
           >Add to Cart</button>
