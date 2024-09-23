@@ -48,7 +48,7 @@ const MobileSingle = ({ cart, setCart }) => {
                 pauseOnHover
                 theme="dark"
             />
-            {data && <div className='product-con'>
+            {data && <div className='single-product-con'>
 
                 <div className="box">
                     <div className="product-img">

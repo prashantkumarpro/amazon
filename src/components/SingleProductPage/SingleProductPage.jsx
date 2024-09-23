@@ -23,9 +23,9 @@ const SingleProductPage = ({ cart, setCart }) => {
   const { rate, count } = rating || {};
 
 
-  const addToCart = (id, title, price, imageUrl, details) => {
+  const addToCart = (description, id, image, price, title, rating) => {
     const obj = {
-      id, title, price, imageUrl, details
+      description, id, image, price, title, rating
     }
     setCart([...cart, obj])
     toast.success('item added!', {
@@ -59,7 +59,7 @@ const SingleProductPage = ({ cart, setCart }) => {
         theme="dark"
       />
       {isSingleLoading && <h2>loading...</h2>}
-      <div className='product-con'>
+      <div className='single-product-con'>
 
         <div className="box">
           <div className="product-img">
@@ -73,7 +73,7 @@ const SingleProductPage = ({ cart, setCart }) => {
           <p className='detail'>{description}</p>
           <p className='price'>$ {price}</p>
           <button
-            onClick={() => addToCart(id, title, price, image)}
+            onClick={() => addToCart(description, id, image, price, title, rating)}
           >Add to Cart</button>
         </div>
       </div>
