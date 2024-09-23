@@ -1,17 +1,13 @@
 .product-con {
     margin-top: 0;
     width: 100%;
-    min-height: 100vh;
     color: #333;
     background-color: #F7F7F7;
-    display: flex;
-    align-items: center;
-    justify-content:space-evenly;
+
 }
 
 .product-con .box {
-    position: relative;
-    width: 25vw;
+    width: 20px;
     height: 35vh;
     background-color: #FFFFFF;
     border-radius: 8px;

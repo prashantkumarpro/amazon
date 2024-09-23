@@ -11,7 +11,7 @@ const Result = ({ cart, setCart }) => {
   const [filterData, setFilterData] = useState([])
 
   const { queryResult } = useParams();
-
+  console.log(queryResult)
 
   useEffect(() => {
 
@@ -20,16 +20,15 @@ const Result = ({ cart, setCart }) => {
       const filteredQuery = products.filter((product) => product.name.toLowerCase().indexOf(queryResult.toLowerCase()) !== -1)
 
       setFilterData(filteredQuery)
-      console.log(filteredQuery)
     }
 
     filteredData()
 
   }, [queryResult])
 
-  const addToCart = (id, title, price, imageUrl, details) => {
+  const addToCart = (description, id, image, price, title) => {
     const obj = {
-      id, title, price, imageUrl, details
+      description, id, image, price, title
     }
     setCart([...cart, obj])
     toast.success('item added!', {
@@ -60,10 +59,10 @@ const Result = ({ cart, setCart }) => {
         theme="dark"
       />
       {filterData.length > 0 ? (
-        <div className="product-grid">
+        <div className="result-product-grid">
           <h1 style={{
             textAlign: 'left',
-            margin: '20px',
+            padding:'25px',
             fontSize: '25px'
           }}>Result:</h1>
           <ul>
@@ -73,7 +72,7 @@ const Result = ({ cart, setCart }) => {
                 key={product.id}>
 
                 <Link
-                  to={`/SingleProduct/${product.id}`}
+                  to={`/MobileSingle/${product.id}`}
                   className="product-img">
                   <img src={product.image} alt="product-image" />
                 </Link>
@@ -81,7 +80,7 @@ const Result = ({ cart, setCart }) => {
 
                 <p className='price'>₹ {product.price}</p>
                 <button
-                  onClick={() => addToCart(product.id, product.title, product.price, product.image, product.details)}
+                  onClick={() => addToCart(product.description, product.id, product.image, product.price, product.title)}
                 >Add to Cart</button>
               </div >
             ))}
@@ -105,8 +104,6 @@ const Result = ({ cart, setCart }) => {
             fontSize: '19px'
           }}>Products not found</p>
         </div>
-
-
       )}
 
     </>

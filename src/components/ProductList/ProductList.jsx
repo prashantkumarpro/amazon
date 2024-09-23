@@ -147,6 +147,9 @@ const ProductList = ({ cart, setCart }) => {
                     <p>{product.title}</p>
                     {/* <small>$</small> */}
                     <strong className='price'>₹ {(product.price * conversionRate).toFixed(0)}</strong>
+                    <strong 
+                    style={{fontSize:'16px', fontWeight: '200'}}
+                    className='price'>$ {product.price}</strong>
                     <button
                       onClick={() => addToCart(product.id, product.title, product.price * conversionRate, product.image, product.description)}
                     >Add to Cart</button>

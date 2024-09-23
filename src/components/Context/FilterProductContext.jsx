@@ -44,7 +44,7 @@ export const FilterDataProvider = ({ children }) => {
         dispatch({ type: "GET_FILTER_CATEGORY", payload: category })
     };
 
-    const prices = ['All', "Under ₹10", "₹100 - ₹500", "₹500 - ₹1,000", "₹1,000 - ₹2,000", "Over ₹1,000"]
+    const prices = ['All', "Under $10", "$100 - $500", "$500 - $1,000", "$1,000 - $2,000", "Over $1,000"]
     // Function to handle price click
     const handlePricesClick = (price) => {
         dispatch({ type: "GET_FILTER_PRICE", payload: price })

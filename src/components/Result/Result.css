@@ -1,44 +1,41 @@
-
-
-.product-grid {
-
+.result-result-product-grid {
     background-color: #FFFFFF;
+    width: 100%;
+    height: 100%;
 }
 
-.product-grid ul {
-    padding: 20px;
+.result-product-grid ul {
+    padding: 0 20px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 10px;
 }
 
 
 
-.product-grid ul .item-box  {
-    position: relative;
-    width: 25vw;
-    /* height: 75vh; */
-    height: 380px;
+.result-product-grid ul .item-box {
     background-color: #F7F7F7;
     border-radius: 8px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-direction: column;
-    margin-top: 1rem;
+    margin-bottom: 20px;
+    padding: 20px 0;
 
 }
 
-.product-grid  ul .item-box  .product-img{
+.result-product-grid ul .item-box .product-img {
     height: 220px;
 }
-.product-grid ul .item-box  .product-img img {
+
+.result-product-grid ul .item-box .product-img img {
     width: 100%;
     height: 100%;
     object-fit: contain;
 }
 
-.product-grid ul .item-box  h3 {
+.result-product-grid ul .item-box h3 {
     margin-top: 10px;
     font-weight: 600;
     color: #000;
@@ -46,7 +43,7 @@
     font-size: 1rem;
 }
 
-.product-grid ul .item-box  .price {
+.result-product-grid ul .item-box .price {
     margin-top: 8px;
     font-weight: 600;
     color: #000;
@@ -54,7 +51,7 @@
     font-size: 1.2rem;
 }
 
-.product-grid ul .item-box  p {
+.result-product-grid ul .item-box p {
     margin-top: 20px;
     font-weight: 600;
     color: #000;
@@ -62,7 +59,7 @@
     font-size: 0.8rem;
 }
 
-.product-grid ul .item-box  button {
+.result-product-grid ul .item-box button {
     padding: 8px 12px;
     border: none;
     outline: none;
@@ -72,5 +69,5 @@
     font-weight: 600;
     color: #3f3f3f;
     cursor: pointer;
-    background-color: aquamarine;
+    background-color: yellow
 }

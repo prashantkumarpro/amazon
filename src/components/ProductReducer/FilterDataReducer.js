@@ -84,19 +84,19 @@ const FilterDataReducer = (state, action) => {
                     priceData = [...state.all_data]
                     console.log('priceData', priceData)
                     break;
-                case "Under ₹10":
+                case "Under $10":
                     priceData = [...state.all_data].filter((data) => data.price <= 10)
                     // console.log(priceData)
                     break;
-                case "₹100 - ₹500":
+                case "$100 - $500":
                     priceData = [...state.all_data].filter((data) => data.price >= 100 && data.price <= 500)
                     // console.log(priceData)
                     break;
-                case "₹500 - ₹1,000":
+                case "$500 - $1,000":
                     priceData = [...state.all_data].filter((data) => data.price >= 500 && data.price <= 1000)
                     // console.log(priceData)
                     break;
-                case "Over ₹1,000":
+                case "Over $1,000":
                     priceData = [...state.all_data].filter((data) => data.price > 1000)
                     // console.log(priceData)
                     break;
