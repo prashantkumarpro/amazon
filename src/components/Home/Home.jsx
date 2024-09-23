@@ -88,7 +88,7 @@ const Home = () => {
             <Link to="/Mobile">See more</Link>
           </div>
           <div className="card bg_transparent">
-            
+
             <div className="box1">
               <h3 style={{ fontSize: '18px', marginTop: '5px' }}>ASUS VIVOBOOK</h3>
               <div className="item_con">
@@ -99,7 +99,7 @@ const Home = () => {
 
             <div className="box2">
               <img src="https://m.media-amazon.com/images/S/al-eu-726f4d26-7fdb/16bac034-e089-426c-bf00-228b58692926.jpg" alt="" />
-            
+
             </div>
 
           </div>
@@ -168,7 +168,7 @@ const Home = () => {
             <Link to="/Mobile">See more</Link>
           </div>
           <div className="card bg_transparent">
-            
+
             <div className="box1">
               <h3 style={{ fontSize: '18px', marginTop: '5px' }}>ASUS VIVOBOOK</h3>
               <div className="item_con">
@@ -179,7 +179,7 @@ const Home = () => {
 
             <div className="box2">
               <img src="https://m.media-amazon.com/images/S/al-eu-726f4d26-7fdb/16bac034-e089-426c-bf00-228b58692926.jpg" alt="" />
-            
+
             </div>
 
           </div>
@@ -189,20 +189,21 @@ const Home = () => {
         <ProductCarousel title='Trending deals' />
         <div className="card-con">
           <div className="card">
-            <h3 style={{ textAlign: 'center', fontSize: '18px', marginTop: '5px' }}>Men's clothing</h3>
-            <div className="boxes">
+            <h3 style={{ fontSize: '18px', marginTop: '5px' }}>Men's clothing</h3>
+            <div className="card3_first_card">
               {mensCloths.map(menCloth => (
                 <Link to={`/SingleProductPage/${menCloth.id}`}
-                  className="box"
+                  className="card3_box"
                   key={menCloth.id}>
                   <img src={menCloth.image} alt={menCloth.name} />
                 </Link>
               ))}
-            </div>
 
+            </div>
+            <Link to="/Product">See more</Link>
           </div>
           <div className="card">
-            <h3 style={{ fontSize: '18px', marginTop: '5px' }}>Men's clothing</h3>
+            <h3 style={{ fontSize: '18px', marginTop: '5px' }}>Keep shopping for</h3>
             <div className="box-con">
               <div className="box">
                 <img src="https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg" alt="" />

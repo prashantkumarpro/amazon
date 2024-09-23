@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import './SingleProductPage.css'
 import { useParams } from 'react-router-dom'
 import { useDataContext } from '../Context/ProductContext';
@@ -9,12 +9,29 @@ import Stars from '../Stars/Stars';
 const SingleProductPage = ({ cart, setCart }) => {
   const { ProductId } = useParams()
   const { fetchSingleProduct, isSingleLoading, singleProduct } = useDataContext()
-
+  const [conversionRate, setConversionRate] = useState(0);
   const API = 'https://fakestoreapi.com/products'
 
   useEffect(() => {
     fetchSingleProduct(`${API}/${ProductId}`)
   }, [ProductId])
+
+
+  // Fetch the conversion rate from USD to INR
+  const fetchConversionRate = async () => {
+    try {
+      const response = await fetch('https://api.exchangerate-api.com/v4/latest/USD'); // Example API
+      const data = await response.json();
+      console.log(data)
+      setConversionRate(data.rates.INR); // Set INR conversion rate
+    } catch (error) {
+      console.error("Error fetching conversion rate:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchConversionRate(); // Fetch the conversion rate when the component mounts
+  }, []);
 
   const { description, id, image, price, title, rating } = singleProduct
 
@@ -58,7 +75,7 @@ const SingleProductPage = ({ cart, setCart }) => {
         pauseOnHover
         theme="dark"
       />
-      {isSingleLoading && <h2>loading...</h2>}
+      {isSingleLoading && <div style={{ position: 'absolute', top: '50%', left: '50%' }} >loading...</div>}
       <div className='single-product-con'>
 
         <div className="box">
@@ -71,9 +88,14 @@ const SingleProductPage = ({ cart, setCart }) => {
           <h3>{title}</h3>
           <Stars stars={rate} reviews={count} />
           <p className='detail'>{description}</p>
-          <p className='price'>$ {price}</p>
+          <strong className='price'>₹ {(price * conversionRate).toFixed(0)}</strong>
+          <br /> 
+          <strong
+            style={{ fontSize: '16px', fontWeight: '200', margin: '20px 0' }}
+            className='price'>$ {price}</strong>
+          <br />
           <button
-            onClick={() => addToCart(description, id, image, price, title, rating)}
+            onClick={() => addToCart(description, id, image, price * conversionRate, title, rating)}
           >Add to Cart</button>
         </div>
       </div>

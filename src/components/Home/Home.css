@@ -133,7 +133,7 @@
 .card-con .card .box1 .item_con img {
     margin-top: -40px;
     display: block;
-    margin-left:12px;
+    margin-left: 12px;
 }
 
 .card-con .card .box2 {
@@ -161,7 +161,6 @@
     width: 98%;
     margin: 15px auto;
     position: relative;
-    /* margin: 0 0 15px; */
     background-color: #FFFFFF;
 }
 
@@ -173,9 +172,31 @@
     object-fit: cover;
 }
 
-@media (max-width:1024px) {
-    
+.card3_first_card {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
+
+.card3_box {
+    position: relative;
+    height: 160px;
+    width: 140px;
+    padding: 10px;
+    display: flex;
+    background-color: #F7F7F7;
+    margin-bottom: 10px;
+}
+
+.card3_box img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@media (max-width:1024px) {}
 
 @media (max-width:600px) {
     .home_image {
@@ -191,9 +212,11 @@
         position: relative;
         margin-bottom: 15px;
     }
-    .card-con .bg_transparent{
+
+    .card-con .bg_transparent {
         background-color: transparent;
     }
+
     .card-con .card .box1 .item_con img {
         margin-top: -40px;
         display: block;
@@ -211,6 +234,7 @@
         position: relative;
         margin-bottom: 15px;
     }
+
     .card-con .card .box1 .item_con img {
         margin-top: -40px;
         display: block;
