@@ -38,11 +38,10 @@ const ProductCarousel = ({ title }) => {
     <div className="blockbaster_deal">
       <div className="deal_header">
         <h3>{title}</h3>
-        <Link>See all deals </Link>
+        <Link to='PcList'>See all deals </Link>
       </div>
       <Divider />
-
-
+      
       <Carousel
         responsive={responsive}
         swipeable={true}
@@ -52,25 +51,17 @@ const ProductCarousel = ({ title }) => {
         keyBoardControl={true}
         removeArrowOnDeviceType={["tablet", "mobile"]}
       >
-        {products.map((product) => {
-          
-          return (
-
-            <div className="products" key={product.id}>
-              <div className="product_img">
-                <img src={product.detailUrl} alt="product" />
-              </div>
-              <p className="products_name">{product.title.shortTitle}</p>
-              <p className="products_offer" style={{ color: "#  007185" }}>{product.discount}</p>
-              <p className="products_explore">{product.tagline}</p>
+        {products.map((product) => (
+          <Link to={`/SinglePc/${product.id}`} className="products" key={product.id}>
+            <div className="product_img">
+              <img src={product.detailUrl} alt="product" />
             </div>
-
-
-          )
-        })}
-
-
-
+            <p className="products_name">{product.title.shortTitle}</p>
+            <p className="products_offer" style={{ color: "#  007185" }}>{product.discount}</p>
+            <p className="products_explore">{product.tagline}</p>
+          </Link >
+        )
+        )}
       </Carousel>
     </div>
 

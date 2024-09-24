@@ -1,6 +1,6 @@
 export const products = [
     {
-        id: 'product1',
+        id: 1,
         url: 'https://m.media-amazon.com/images/I/41kPiVffGhL._AC_SY200_.jpg',
         detailUrl: 'https://m.media-amazon.com/images/I/41kPiVffGhL._AC_SY200_.jpg',
         title: {
@@ -17,7 +17,7 @@ export const products = [
         tagline: 'Deal of the day'
     },
     {
-        id: 'product2',
+        id: 2,
         url: 'https://m.media-amazon.com/images/I/41-2m5Oyv5L._AC_SY200_.jpg',
         detailUrl: 'https://m.media-amazon.com/images/I/41-2m5Oyv5L._AC_SY200_.jpg',
         title: {
@@ -26,7 +26,7 @@ export const products = [
         },
         price: {
             mrp: 14999,
-            cost: 899,
+            cost: 8999,
             discount: '40%'
         },
         description: 'realme Buds Wireless 3 in-Ear Bluetooth Headphones,30dB ANC, Spatial Audio,13.6mm Dynamic Bass Driver,Upto 40 Hours Playback, Fast',
@@ -34,7 +34,7 @@ export const products = [
         tagline: 'Pestige, Nova & more'
     },
     {
-        id: 'product3',
+        id: 3,
         url: 'https://m.media-amazon.com/images/I/31pAe23ncfL._AC_SY200_.jpg',
         detailUrl: 'https://m.media-amazon.com/images/I/31pAe23ncfL._AC_SY200_.jpg',
         title: {
@@ -51,7 +51,7 @@ export const products = [
         tagline: 'Deal of the Day'
     },
     {
-        id: 'product4',
+        id: 4,
         url: 'https://m.media-amazon.com/images/I/31qVIrbLqJL._AC_SY200_.jpg',
         detailUrl: 'https://m.media-amazon.com/images/I/31qVIrbLqJL._AC_SY200_.jpg',
         title: {
@@ -68,7 +68,7 @@ export const products = [
         tagline: 'Best Seller'
     },
     {
-        id: 'product5',
+        id: 5,
         url: 'https://m.media-amazon.com/images/I/31Q0xVpBphL._AC_SY200_.jpg',
         detailUrl: 'https://m.media-amazon.com/images/I/31Q0xVpBphL._AC_SY200_.jpg',
         title: {
@@ -85,7 +85,7 @@ export const products = [
         tagline: 'Kubra, Nova & more'
     },
     {
-        id: 'product6',
+        id: 6,
         url: 'https://m.media-amazon.com/images/I/31BXEEUVfFL._AC_SY200_.jpg',
         detailUrl: 'https://m.media-amazon.com/images/I/31BXEEUVfFL._AC_SY200_.jpg',
         title: {
@@ -102,7 +102,7 @@ export const products = [
         tagline: 'Kubra, Nova & more'
     },
     {
-        id: 'product7',
+        id: 7,
         url: 'https://m.media-amazon.com/images/I/51o13K4h3-L._AC_SY200_.jpg',
         detailUrl: 'https://m.media-amazon.com/images/I/51o13K4h3-L._AC_SY200_.jpg',
         title: {
@@ -119,12 +119,12 @@ export const products = [
         tagline: 'Kubra, Nova & more'
     },
     {
-        id: 'product8',
+        id: 8,
         url: 'https://m.media-amazon.com/images/I/51t6Sv1C1AL._AC_SY200_.jpg',
         detailUrl: 'https://m.media-amazon.com/images/I/51t6Sv1C1AL._AC_SY200_.jpg',
         title: {
-            shortTitle: 'Home Appliances',
-            longTitle: 'Home Appliances from Top Brands Up to 55% off Republic Day Sale Home Appliances from Top from Top Brands'
+            shortTitle: 'Home Appliances from Top Brands',
+            longTitle: 'Home Appliances from Top Brands Up to 55% off Republic Day Sale Home Appliances from Top Brands'
         },
         price: {
             mrp: 1899,
@@ -136,7 +136,7 @@ export const products = [
         tagline: 'Kubra, Nova & more'
     },
     {
-        id: 'product9',
+        id: 9,
         url: 'https://m.media-amazon.com/images/I/41Wupd7WtFL._AC_SY200_.jpg',
         detailUrl: 'https://m.media-amazon.com/images/I/41Wupd7WtFL._AC_SY200_.jpg',
         title: {

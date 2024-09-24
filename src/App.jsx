@@ -14,6 +14,8 @@ import ProductList from './components/ProductList/ProductList.jsx';
 import Login from './components/Login/Login.jsx';
 import Registration from './components/Registration/Registration.jsx';
 import MobileSingle from './components/MobileSingle/MobileSingle.jsx';
+import PcList from './components/ProductCarousel/PcList.jsx';
+import SinglePc from './components/ProductCarousel/SinglePc.jsx';
 
 
 
@@ -36,6 +38,8 @@ const App = () => {
           <Route path="Cart" element={<Cart cart={cart} setCart={setCart} />} />
           <Route path="/SingleProductPage/:ProductId" element={<SingleProductPage cart={cart} setCart={setCart} />} />
           <Route path="/MobileSingle/:MobileId" element={<MobileSingle cart={cart} setCart={setCart} />} />
+          <Route path="/PcList" element={<PcList cart={cart} setCart={setCart} />} />
+          <Route path="/SinglePc/:SinglePcId" element={<SinglePc cart={cart} setCart={setCart} />} />
           <Route path="/Stars" element={<Stars />} />
           <Route path="*" element={<ErrorPage />} />
         </Route>

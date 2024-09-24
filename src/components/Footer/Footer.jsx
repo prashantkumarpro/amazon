@@ -1,13 +1,45 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 import './Footer.css'
-import Divider from '@mui/material/Divider';
+
 const Footer = () => {
+
+
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
+
+
+
+
+
+
   return (
     <div className='footer-container'>
-      <div className="top">
+      <div id='backToTopBtn'
+        className={`top ${isVisible ? 'visible' : ''}`}
+        onClick={scrollToTop}
+        style={{ display: isVisible ? 'block' : 'none' }}>
         <span>Back to Top</span>
       </div>
-
       <div className="middile">
 
         <div className="mdl_part">
@@ -45,9 +77,9 @@ const Footer = () => {
             <h3>Amazon App Download</h3>
             <h3>Help</h3>
           </div>
-         
+
         </div>
-       
+
       </div>
 
     </div>

@@ -6,7 +6,7 @@ const Cart = ({ cart, setCart }) => {
     const [totalAmount, setTotalAmount] = useState()
    
     const handleBuyAllBtn = ()=>{
-        alert('This service is under maintenance')
+        alert('At this time, I am focused on front-end development and the purchasing process will be implemented in the future. Thankyou for your understanding.')
     }
 
     const totalCartAmount = () => {
@@ -45,7 +45,7 @@ const Cart = ({ cart, setCart }) => {
                                         </div>
                                         <div className='box'>
                                             <div className='box_heading'>
-                                                <p>{item.description}</p>
+                                                <p>{item.description.slice(0,50)}</p>
                                                 <p className='price' style={{ fontSize: '20px', fontWeight: '200' }}>₹ {item.price.toFixed(0)}</p>
                                             </div>
                                         </div>

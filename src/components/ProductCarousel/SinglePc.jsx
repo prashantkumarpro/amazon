@@ -1,23 +1,23 @@
 import React, { useEffect, useState } from 'react'
-import './MobileSingle.css'
-import { products } from '../ProductList/data'
+import { products } from './ProductData'
+import { useParams } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useParams } from 'react-router-dom'
 
-const MobileSingle = ({ cart, setCart }) => {
+const SinglePc = ({ cart, setCart }) => {
     const [data, setData] = useState()
-    const { MobileId } = useParams()
+    const { SinglePcId } = useParams()
 
     useEffect(() => {
-        const singleData = products.filter(detail => detail.id == MobileId)
+        const singleData = products.filter(detail => detail.id == SinglePcId)
         setData(singleData[0]);
-    }, [MobileId])
+    }, [SinglePcId])
 
-    const { description, id, image, price, title } = data || {};
+    const { description, id, url, price, title } = data || {};
+
 
     const addToCart = (description, id, image, price, title) => {
-        
+
         const obj = { description, id, image, price, title }
 
         setCart([...cart, obj])
@@ -32,7 +32,6 @@ const MobileSingle = ({ cart, setCart }) => {
             theme: "dark",
         });
     }
-
     return (
         <>
             <ToastContainer
@@ -47,20 +46,22 @@ const MobileSingle = ({ cart, setCart }) => {
                 pauseOnHover
                 theme="dark"
             />
-            {data && <div className='singleMobile-product-con'>
+            {data && <div
+                key={id}
+                className='singleMobile-product-con'>
 
                 <div className="box">
                     <div className="product-img">
-                        <img src={image} alt="product-image" />
+                        <img src={url} alt="product-image" />
                     </div>
 
                 </div>
                 <div className="product-des">
-                    <h3>{title}</h3>
+                    <h3>{title.shortTitle}</h3>
                     <p className='detail'>{description}</p>
-                    <p className='price'>₹ {price}</p>
+                    <p className='price'>₹ {price.cost}</p>
                     <button
-                        onClick={() => addToCart(description, id, image, price, title)}
+                        onClick={() => addToCart(description, id, url, price.cost, title)}
                     >Add to Cart</button>
                 </div>
             </div>
@@ -70,4 +71,4 @@ const MobileSingle = ({ cart, setCart }) => {
     )
 }
 
-export default MobileSingle
+export default SinglePc

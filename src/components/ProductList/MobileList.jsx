@@ -21,7 +21,6 @@ export const MobileList = ({ cart, setCart }) => {
             const filteredQuery = products.filter((product) =>
                 product.name.toLowerCase().indexOf(searchQuery.toLowerCase()) !== -1
             );
-            console.log(filteredQuery)
             setData(() => filteredQuery);
 
         } else if (brandName) {

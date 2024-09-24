@@ -25,8 +25,8 @@
 
 .singleMobile-product-con .product-img {
     width: 100%; /* Make image responsive */
-    height: auto; /* Maintain aspect ratio */
-    max-width: 25vw;
+    max-height: 280px; /* Maintain aspect ratio */
+    max-width: 320px;
 }
 
 .singleMobile-product-con .box .product-img img {
@@ -65,12 +65,11 @@
     margin-top: 20px;
 }
 
-button {
-    margin-top: -20px;
+.singleMobile-product-con button {
     padding: 8px 12px;
     border: none;
     outline: none;
-    border-radius: 2px;
+    border-radius: 50px;
     margin-top: 10px;
     font-size: 14px;
     font-weight: 600;
