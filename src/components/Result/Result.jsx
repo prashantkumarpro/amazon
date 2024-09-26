@@ -11,7 +11,7 @@ const Result = ({ cart, setCart }) => {
   const [filterData, setFilterData] = useState([])
 
   const { queryResult } = useParams();
-  console.log(queryResult)
+
 
   useEffect(() => {
 
@@ -62,7 +62,7 @@ const Result = ({ cart, setCart }) => {
         <div className="result-product-grid">
           <h1 style={{
             textAlign: 'left',
-            padding:'25px',
+            padding: '25px',
             fontSize: '25px'
           }}>Result:</h1>
           <ul>

@@ -1,45 +1,50 @@
 import React, { useState } from 'react'
 import './Login.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { signInWithEmailAndPassword } from "firebase/auth";  // Firebase auth function
+import { auth } from '../Registration/firebase';  // Import auth from your firebase.js
+
 const Login = () => {
-
-  const [inputValue, setInputValue] = useState('');
-
-
-  //client Error msg 
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const navigate = useNavigate();  // To redirect user after login
 
 
 
-  const handleEmailOrPhone = (event) => {
-    setInputValue(event.target.value)
 
-  }
+
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+
   const handleLogin = (e) => {
-    e.preventDefault()
-    validateInput()
-  }
-
-  const validateInput = () => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const mobileRegex = /^(?:\+\d{1,2}\s?)?\d{10,12}$/;
-
-    if (emailRegex.test(inputValue) && mobileRegex.test(inputValue)) {
-        setError('Invalid input: cannot contain both email address and mobile number');
-    } else if (emailRegex.test(inputValue)) {
-        setError('');
-        alert('Correct email data');
-        console.log(inputValue);
-        setInputValue('');
-    } else if (mobileRegex.test(inputValue)) {
-        setError('');
-        alert('Correct mobile data');
-        console.log(inputValue);
-        setInputValue('');
-    } else {
-        setError('Invalid email address or mobile number');
+    e.preventDefault();
+    if (!email || !password) {
+      alert('Plese enter both email and password')
+      setError('Please enter both email and password');
+      return;
     }
-};
+
+    // Firebase login with email and password
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Successfully signed in
+        const user = userCredential.user;
+        console.log('Logged in as:', user.email);
+        navigate('/');  // Redirect to dashboard or homepage after login
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        setError(errorMessage);  // Show error message to user
+      });
+  };
+
 
   return (
     <div className='login-container'>
@@ -51,11 +56,19 @@ const Login = () => {
       <div className="form_container">
         <form className='login-form'>
           <h3>Sign in</h3>
-          <p htmlFor="">Email or mobile phone number </p>
+          <p htmlFor="">Email </p>
           <input
-            onChange={handleEmailOrPhone}
-            value={inputValue}
-            type="text" />
+            onChange={handleEmailChange}
+            value={email}
+            type="email"
+            placeholder="coderbano@gmail.com us as email" />
+          <p htmlFor="">Password </p>
+          <input
+            onChange={handlePasswordChange}
+            value={password}
+            type="text"
+            required
+            placeholder="Coder@123 us as password" />
           {error && (
             <p style={{ color: '#c40000', marginTop: '-10px' }}><span style={{ fontStyle: "italic", color: '#c40000', fontWeight: '900', fontSize: '12px' }}>!</span> {error}</p>
           )}

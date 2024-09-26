@@ -1,24 +1,32 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Navbar.css'
 import logo from './amazon_logo.png'
 import flag from './indian_flag.png'
 import { Link, useNavigate } from 'react-router-dom'
 import Sidebar from '../Sidebar/Sidebar'
-
-
+import { auth } from '../Registration/firebase';  // Import auth from your firebase.js
+import { signOut } from "firebase/auth";
 
 
 const Navbar = ({ cart }) => {
-
-
     const [query, setQuery] = useState('')
     const [sideBar, setSideBar] = useState(false)
-
-    const navigte = useNavigate()
+    const [user, setUser] = useState(null);
+    const navigate = useNavigate()
 
     const submitHendlar = (e) => {
         e.preventDefault()
         navigte(`/Result/${query}`)
+        if (query.match(/[Mm]obile/)) {
+            navigte(`/Mobile`)
+        }
+        const items = ["mens clothes", "womens clothes", "electronic", "jewelery"];
+        items.forEach(item => {
+            if (item.includes(query.toLocaleLowerCase())) {
+                navigte('/Product')
+            }
+        })
+
         setQuery('')
     }
 
@@ -35,6 +43,32 @@ const Navbar = ({ cart }) => {
     const languageHandler = () => {
         setDisplayData();
     }
+
+    useEffect(() => {
+        // Listen to auth state changes
+        const unsubscribe = auth.onAuthStateChanged((user) => {
+            if (user) {
+                console.log(user)
+                setUser(user); // Set the logged-in user details
+            } else {
+                // User is not logged in, redirect to login page
+                navigate('/Login');
+            }
+        });
+
+        // Cleanup subscription
+        return () => unsubscribe();
+    }, []);
+
+    const handleLogout = () => {
+        signOut(auth).then(() => {
+            console.log("User signed out successfully.");
+            navigate('/Login'); // Redirect to login page after sign out
+        }).catch((error) => {
+            console.error("Error signing out:", error.message);
+        });
+    };
+
     return (
         <>
 
@@ -51,7 +85,7 @@ const Navbar = ({ cart }) => {
                                 <i className="ri-map-pin-line"></i>
                             </div>
                             <div className="address">
-                                <span className='line-1'>Divliver to Prashant</span>
+                                <span className='line-1'>Divliver to {`${user ? user.displayName : 'user'}`}</span>
                                 <span className='line-2'>Purnia 853204</span>
                             </div>
                         </div>
@@ -64,7 +98,9 @@ const Navbar = ({ cart }) => {
                             <option>All</option>
                         </select>
 
-                        <input type="text"
+                        <input
+                            id='searchInput'
+                            type="text"
                             value={query}
                             placeholder='Search Amazon.In'
                             onChange={(e) => setQuery(e.target.value)}
@@ -91,12 +127,18 @@ const Navbar = ({ cart }) => {
                                 })}
                             </select>
                         </div>
-                        <Link to="/Login" className="account-types border">
-                            <span className='line-1'>Hello,Prashant</span>
-                            <select className='line-2'>
-                                <option>Account & List type</option>
-                            </select>
-                        </Link>
+                        <div className="account-types border">
+                            <span className='line-1'>Hello,{`${user ? user.displayName : 'user'}`}</span>
+                            <div className='line-2'>
+                                {user ? (
+                                    <div 
+                                    style={{cursor:'pointer'}}
+                                    onClick={handleLogout}>LogOut</div>
+                                ) : (
+                                    <Link to='/Login'>Login</Link>
+                                )}
+                            </div>
+                        </div>
 
                         <div className="nav-order">
                             <span className='line-1'>Returns</span>

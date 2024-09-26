@@ -1,16 +1,19 @@
 import React, { useState } from 'react'
-import { Link, useLinkClickHandler } from 'react-router-dom'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { auth } from './firebase'; // Import Firebase auth
 import './Registration.css'
 
 
 const Registration = () => {
   const [clientName, setClientName] = useState("")
-  const [clientNum, setClientNum] = useState("")
+  const [clientEmail, setClientEmail] = useState("")
   const [clientPassword, setClientPassword] = useState("")
 
+  const navigate = useNavigate()
   // client Error msg 
   const [clientNameErr, setClientNameErr] = useState("")
-  const [clientNumErr, setClientNumErr] = useState("")
+  const [clientEmailErr, setClientEmailErr] = useState("")
   const [clientPasswordErr, setClientPasswordErr] = useState("")
 
   const nameHandler = (e) => {
@@ -18,8 +21,8 @@ const Registration = () => {
     setClientNameErr("")
   }
   const numHandler = (e) => {
-    setClientNum(e.target.value)
-    setClientNumErr("")
+    setClientEmail(e.target.value)
+    setClientEmailErr("")
 
   }
   const handlePassword = (e) => {
@@ -29,33 +32,53 @@ const Registration = () => {
   }
 
   // submit handler function 
-  const handleRegistration = (e) => {
-    e.preventDefault()
+  const handleRegistration = async (e) => {
+    e.preventDefault();
     if (!clientName) {
-      setClientNameErr("Enter your name.")
-
+      setClientNameErr("Enter your name.");
+      return;
     }
-    if (!clientNum) {
-      setClientNumErr("Enter your mobile number.")
-
-
+    if (!clientEmail) {
+      setClientEmailErr("Enter your mobile number.");
+      return;
     }
     if (!clientPassword) {
-      setClientPasswordErr("Enter your password.")
- 
-    }else{
+      setClientPasswordErr("Enter your password.");
+      return;
+    } else {
       if (clientPassword.length < 6) {
-        setClientPasswordErr("Passwords must be at least 6 characters.")
-        return false;
+        setClientPasswordErr("Passwords must be at least 6 characters.");
+        return;
       }
     }
-    if(clientName && clientNum && clientPassword){
-       console.table(`clientName: ${clientName}, clietnNumber: ${clientNum}, clientPassword:${clientPassword}`)
-       setClientName("")
-       setClientNum("")
-       setClientPassword("")
+
+    try {
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        clientEmail, // Use mobile number as email
+        clientPassword
+      );
+
+      const user = userCredential.user;
+      
+      // Update the user's profile with the display name
+      await updateProfile(user, {
+        displayName: clientName // Setting the display name to clientName
+      });
+
+      console.log("User registered:", user);
+      console.log("User registered:", userCredential.user);
+      alert("User registered successfully!");
+      setClientName("");
+      setClientEmail("");
+      setClientPassword("");
+      navigate('/Login')
+    } catch (error) {
+      console.error("Error registering user:", error.message);
+      setClientPasswordErr("Failed to register. Please try again.");
     }
-  }
+  };
+
   return (
     <div className='login-container'>
       <div className="header">
@@ -76,19 +99,21 @@ const Registration = () => {
           {clientNameErr && (
             <p style={{ color: '#c40000', marginTop: '-10px' }}><span style={{ fontStyle: "italic", color: '#c40000', fontWeight: '900', fontSize: '12px' }}>!</span> {clientNameErr}</p>
           )}
-          <p>Mobile number</p>
+          <p>Email Id</p>
           <input
             onChange={numHandler}
-            value={clientNum}
+            value={clientEmail}
+            required
             type="text"
             placeholder='Mobile Number' />
-          {clientNumErr && (
-            <p style={{ color: '#c40000', marginTop: '-10px' }}><span style={{ fontStyle: "italic", color: '#c40000', fontWeight: '900', fontSize: '12px' }}>!</span> {clientNumErr}</p>
+          {clientEmailErr && (
+            <p style={{ color: '#c40000', marginTop: '-10px' }}><span style={{ fontStyle: "italic", color: '#c40000', fontWeight: '900', fontSize: '12px' }}>!</span> {clientEmailErr}</p>
           )}
           <p>Password</p>
           <input
             onChange={handlePassword}
             value={clientPassword}
+            required
             type="Password"
             placeholder='At least 6 characters' />
 
@@ -104,7 +129,7 @@ const Registration = () => {
           <p>To verify your number, we will send you a text message with a temporary code. Message and data rates may apply.</p>
           <button type="submit" onClick={handleRegistration} >Verify Mobile Number</button>
 
-          <p>Already have an account? <Link to="/Login"><span>Sign in</span><i className="ri-arrow-right-s-fill" style={{color:'#333'}}></i></Link></p>
+          <p>Already have an account? <Link to="/Login"><span>Sign in</span><i className="ri-arrow-right-s-fill" style={{ color: '#333' }}></i></Link></p>
 
           <p>Buying for work? <span>Create a free business account </span> <i className="ri-arrow-right-s-fill"></i></p>
 
