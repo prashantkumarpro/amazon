@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import './MobileList.css'
 import { products } from './data';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useAuthContext } from '../Context/UserContext';
 
 export const MobileList = ({ cart, setCart }) => {
 
@@ -12,8 +13,9 @@ export const MobileList = ({ cart, setCart }) => {
     const [brandName, setBrandName] = useState('')
     const [filterAmount, setFilterAmount] = useState(null)
     const [filterColer, setFilterColor] = useState('')
+    const { user } = useAuthContext();
 
-
+    const navigate = useNavigate()
     useEffect(() => {
 
         if (searchQuery) {
@@ -36,7 +38,7 @@ export const MobileList = ({ cart, setCart }) => {
             // filter by color
             const filteredColor = products.filter((product) => product.color === filterColer);
             setData(() => filteredColor)
-          
+
         } else {
 
             setData(() => products)
@@ -45,22 +47,28 @@ export const MobileList = ({ cart, setCart }) => {
 
     }, [brandName, products, filterAmount, filterColer, searchQuery])
 
+
     const addToCart = (id, title, price, image, description) => {
         const obj = {
             id, title, price, image, description
         }
-    
-        setCart([...cart, obj])
-        toast.success('item added!', {
-            position: "top-right",
-            autoClose: 1500,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "dark",
-        });
+
+        if (user) {
+            setCart([...cart, obj])
+
+            toast.success('item added!', {
+                position: "top-right",
+                autoClose: 1500,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
+        } else {
+            navigate('/Login')
+        }
 
     }
 

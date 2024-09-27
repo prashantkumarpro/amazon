@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { products } from './ProductData'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useAuthContext } from '../Context/UserContext';
+
 
 const SinglePc = ({ cart, setCart }) => {
     const [data, setData] = useState()
     const { SinglePcId } = useParams()
+    const { user } = useAuthContext();
+    const navigate = useNavigate();
 
     useEffect(() => {
         const singleData = products.filter(detail => detail.id == SinglePcId)
@@ -20,17 +24,22 @@ const SinglePc = ({ cart, setCart }) => {
 
         const obj = { description, id, image, price, title }
 
-        setCart([...cart, obj])
-        toast.success('item added!', {
-            position: "top-right",
-            autoClose: 1500,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "dark",
-        });
+        if(user){
+            setCart([...cart, obj])
+            toast.success('item added!', {
+                position: "top-right",
+                autoClose: 1500,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
+        } else{
+            navigate('/Login')
+        }
+      
     }
     return (
         <>

@@ -2,9 +2,12 @@ import React, { useEffect, useState } from 'react'
 import './Cart.css'
 import { Link } from 'react-router-dom'
 
+
+
 const Cart = ({ cart, setCart }) => {
     const [totalAmount, setTotalAmount] = useState()
    
+
     const handleBuyAllBtn = ()=>{
         alert('At this time, I am focused on front-end development and the purchasing process will be implemented in the future. Thankyou for your understanding.')
     }

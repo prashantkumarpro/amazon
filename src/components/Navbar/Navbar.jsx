@@ -1,29 +1,32 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import './Navbar.css'
 import logo from './amazon_logo.png'
 import flag from './indian_flag.png'
 import { Link, useNavigate } from 'react-router-dom'
 import Sidebar from '../Sidebar/Sidebar'
-import { auth } from '../Registration/firebase';  // Import auth from your firebase.js
-import { signOut } from "firebase/auth";
+import { useAuthContext } from '../Context/UserContext'
+
 
 
 const Navbar = ({ cart }) => {
     const [query, setQuery] = useState('')
     const [sideBar, setSideBar] = useState(false)
-    const [user, setUser] = useState(null);
+    // const [user, setUser] = useState(null);
     const navigate = useNavigate()
+
+    const { user, handleLogout } = useAuthContext()
+
 
     const submitHendlar = (e) => {
         e.preventDefault()
-        navigte(`/Result/${query}`)
+        navigate(`/Result/${query}`)
         if (query.match(/[Mm]obile/)) {
-            navigte(`/Mobile`)
+            navigate(`/Mobile`)
         }
         const items = ["mens clothes", "womens clothes", "electronic", "jewelery"];
         items.forEach(item => {
             if (item.includes(query.toLocaleLowerCase())) {
-                navigte('/Product')
+                navigate('/Product')
             }
         })
 
@@ -31,7 +34,7 @@ const Navbar = ({ cart }) => {
     }
 
     const searchHendlar = () => {
-        navigte(`/Result/${query}`)
+        navigate(`/Result/${query}`)
         setQuery('')
 
     }
@@ -44,30 +47,14 @@ const Navbar = ({ cart }) => {
         setDisplayData();
     }
 
-    useEffect(() => {
-        // Listen to auth state changes
-        const unsubscribe = auth.onAuthStateChanged((user) => {
-            if (user) {
-                console.log(user)
-                setUser(user); // Set the logged-in user details
-            } else {
-                // User is not logged in, redirect to login page
-                navigate('/Login');
-            }
-        });
+    const handleCart = ()=>{
+        if(user){
+            navigate('/Cart')
+        } else{
+            navigate('/Login')
+        }
+    }
 
-        // Cleanup subscription
-        return () => unsubscribe();
-    }, []);
-
-    const handleLogout = () => {
-        signOut(auth).then(() => {
-            console.log("User signed out successfully.");
-            navigate('/Login'); // Redirect to login page after sign out
-        }).catch((error) => {
-            console.error("Error signing out:", error.message);
-        });
-    };
 
     return (
         <>
@@ -131,9 +118,9 @@ const Navbar = ({ cart }) => {
                             <span className='line-1'>Hello,{`${user ? user.displayName : 'user'}`}</span>
                             <div className='line-2'>
                                 {user ? (
-                                    <div 
-                                    style={{cursor:'pointer'}}
-                                    onClick={handleLogout}>LogOut</div>
+                                    <div
+                                        style={{ cursor: 'pointer' }}
+                                        onClick={handleLogout}>LogOut</div>
                                 ) : (
                                     <Link to='/Login'>Login</Link>
                                 )}
@@ -144,14 +131,17 @@ const Navbar = ({ cart }) => {
                             <span className='line-1'>Returns</span>
                             <span className='line-2'>& Oreder</span>
                         </div>
-                        <Link
+                        <div 
+                            style={{cursor:'pointer'}}
+                            onClick={handleCart}
                             to="/Cart"
                             className="nav-cart border">
                             <span className="icon">
                                 <div className="number-of-item">{cart.length}</div>
                                 <i className="ri-shopping-cart-line"></i></span>
                             <span className='cart'></span>
-                        </Link>
+                        </div 
+                            >
                     </div>
 
                 </div>

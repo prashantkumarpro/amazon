@@ -10,6 +10,7 @@ import SmartWatchCarousel from '../SmartWatchCarousel/SmartWatchCarousel';
 
 const Home = () => {
   const { isLoading, mensCloths } = useDataContext();
+
   return (
     <>
 
@@ -25,7 +26,7 @@ const Home = () => {
         }}> Loading</h2> : ''}
 
         <div className="card-con">
-        <div className="card">
+          <div className="card">
             <h3 style={{ fontSize: '18px', marginTop: '5px' }}>Deals on smartphones</h3>
             <Link to='/Mobile' className="box-con">
               <div className="box">

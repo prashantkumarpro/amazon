@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import './Result.css';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { products } from '../ProductList/data';
-
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useAuthContext } from '../Context/UserContext';
 
 
 const Result = ({ cart, setCart }) => {
   const [filterData, setFilterData] = useState([])
 
   const { queryResult } = useParams();
-
+  const { user } = useAuthContext();
+  const navigate = useNavigate()
 
   useEffect(() => {
 
@@ -30,17 +31,23 @@ const Result = ({ cart, setCart }) => {
     const obj = {
       description, id, image, price, title
     }
-    setCart([...cart, obj])
-    toast.success('item added!', {
-      position: "top-right",
-      autoClose: 1500,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
-    });
+
+    if (user) {
+      setCart([...cart, obj])
+      toast.success('item added!', {
+        position: "top-right",
+        autoClose: 1500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+    } else {
+      navigate('/Login')
+    }
+
 
   }
 

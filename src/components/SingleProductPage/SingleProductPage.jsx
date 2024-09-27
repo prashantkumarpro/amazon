@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import './SingleProductPage.css'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { useDataContext } from '../Context/ProductContext';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Stars from '../Stars/Stars';
+import { useAuthContext } from '../Context/UserContext';
+
 
 const SingleProductPage = ({ cart, setCart }) => {
   const { ProductId } = useParams()
   const { fetchSingleProduct, isSingleLoading, singleProduct } = useDataContext()
   const [conversionRate, setConversionRate] = useState(0);
+  const navigate = useNavigate()
+  const { user } = useAuthContext();
   const API = 'https://fakestoreapi.com/products'
 
   useEffect(() => {
@@ -44,17 +48,22 @@ const SingleProductPage = ({ cart, setCart }) => {
     const obj = {
       description, id, image, price, title, rating
     }
-    setCart([...cart, obj])
-    toast.success('item added!', {
-      position: "top-right",
-      autoClose: 1500,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
-    });
+
+    if (user) {
+      setCart([...cart, obj])
+      toast.success('item added!', {
+        position: "top-right",
+        autoClose: 1500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+    } else {
+      navigate('/Login')
+    }
   }
 
 
@@ -89,7 +98,7 @@ const SingleProductPage = ({ cart, setCart }) => {
           <Stars stars={rate} reviews={count} />
           <p className='detail'>{description}</p>
           <strong className='price'>₹ {(price * conversionRate).toFixed(0)}</strong>
-          <br /> 
+          <br />
           <strong
             style={{ fontSize: '16px', fontWeight: '200', margin: '20px 0' }}
             className='price'>$ {price}</strong>

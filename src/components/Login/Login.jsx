@@ -29,13 +29,13 @@ const Login = () => {
       setError('Please enter both email and password');
       return;
     }
-
+    {<p>Wait</p>}
     // Firebase login with email and password
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Successfully signed in
         const user = userCredential.user;
-        console.log('Logged in as:', user.email);
+        // console.log('Logged in as:', user.email);
         navigate('/');  // Redirect to dashboard or homepage after login
       })
       .catch((error) => {

@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import './ProductList.css'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useFilterDataContext } from '../Context/FilterProductContext'
 import { ToastContainer, toast } from 'react-toastify';
-
+import { useAuthContext } from '../Context/UserContext';
 
 
 const ProductList = ({ cart, setCart }) => {
   const [conversionRate, setConversionRate] = useState(0);
+  const { user } = useAuthContext();
+  const navigate = useNavigate();
 
   const {
     filter_data,
@@ -26,18 +28,23 @@ const ProductList = ({ cart, setCart }) => {
     const obj = {
       id, title, price, image, description
     }
+    if (user) {
+      setCart([...cart, obj])
+      toast.success('item added!', {
+        position: "top-right",
+        autoClose: 1500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+    } else {
+      navigate('/Login')
+    }
 
-    setCart([...cart, obj])
-    toast.success('item added!', {
-      position: "top-right",
-      autoClose: 1500,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
-    });
+
 
   }
 
@@ -147,9 +154,9 @@ const ProductList = ({ cart, setCart }) => {
                     <p>{product.title}</p>
                     {/* <small>$</small> */}
                     <strong className='price'>₹ {(product.price * conversionRate).toFixed(0)}</strong>
-                    <strong 
-                    style={{fontSize:'16px', fontWeight: '200'}}
-                    className='price'>$ {product.price}</strong>
+                    <strong
+                      style={{ fontSize: '16px', fontWeight: '200' }}
+                      className='price'>$ {product.price}</strong>
                     <button
                       onClick={() => addToCart(product.id, product.title, product.price * conversionRate, product.image, product.description)}
                     >Add to Cart</button>

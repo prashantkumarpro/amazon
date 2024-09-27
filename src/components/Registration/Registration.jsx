@@ -127,7 +127,7 @@ const Registration = () => {
             </p>
           )}
           <p>To verify your number, we will send you a text message with a temporary code. Message and data rates may apply.</p>
-          <button type="submit" onClick={handleRegistration} >Verify Mobile Number</button>
+          <button type="submit" onClick={handleRegistration} >Sign Up</button>
 
           <p>Already have an account? <Link to="/Login"><span>Sign in</span><i className="ri-arrow-right-s-fill" style={{ color: '#333' }}></i></Link></p>
 

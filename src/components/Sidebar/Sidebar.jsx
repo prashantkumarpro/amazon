@@ -2,13 +2,18 @@ import { useEffect, useRef } from 'react'
 import './Sidebar.css'
 import { motion } from 'framer-motion'
 import SidebarContent from '../SidebarContent/SidebarContent'
-import { Link } from 'react-router-dom'
-
+import { Link, useNavigate } from 'react-router-dom'
+import { useAuthContext } from '../Context/UserContext'
 
 const Sidebar = ({ setSideBar, Sidebar }) => {
 
   let ref = useRef()
+  const navigate = useNavigate();
+  const { user, handleLogout } = useAuthContext();
 
+  const handeleLogin = () => {
+    navigate('/Login')
+  }
   useEffect(() => {
     document.body.addEventListener('click', (e) => {
       if (e.target.contains(ref.current)) {
@@ -27,10 +32,15 @@ const Sidebar = ({ setSideBar, Sidebar }) => {
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: .2 }}>
         <div className="content">
-          <Link to="/Login" className="account">
+          <div className="account">
             <i className="ri-account-circle-fill account-icon"></i>
-            <h3>Hello, Sign In</h3>
-          </Link >
+            <h3>Hello, {user ? (
+              <span>{user.displayName}</span>
+            ) : (
+              <Link to='/Login'>Login</Link>
+            )} </h3>
+
+          </div >
           <div className="sidebar-content-container">
 
             <SidebarContent
@@ -54,7 +64,20 @@ const Sidebar = ({ setSideBar, Sidebar }) => {
               two='Gift Cards & Mobile Recharges'
               three="Amazon Launchpad"
               four="Handloom and Handicrafts" />
+            <div className='content-container'>
+              {user ? (
+                <h3>Welcome, {user.displayName},
+                  <span
+                    style={{ cursor: 'pointer' }}
+                    onClick={handleLogout}> LogOut</span>
+                </h3>
+              ) : (
+                <h3
+                  onClick={handeleLogin}
+                  style={{ cursor: 'pointer' }}> Login</h3>
+              )}
 
+            </div>
           </div>
 
         </div>

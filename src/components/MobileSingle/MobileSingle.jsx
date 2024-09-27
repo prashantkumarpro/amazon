@@ -3,11 +3,15 @@ import './MobileSingle.css'
 import { products } from '../ProductList/data'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
+import { useAuthContext } from '../Context/UserContext';
+
 
 const MobileSingle = ({ cart, setCart }) => {
     const [data, setData] = useState()
     const { MobileId } = useParams()
+    const { user } = useAuthContext();
+    const navigate = useNavigate();
 
     useEffect(() => {
         const singleData = products.filter(detail => detail.id == MobileId)
@@ -17,20 +21,25 @@ const MobileSingle = ({ cart, setCart }) => {
     const { description, id, image, price, title } = data || {};
 
     const addToCart = (description, id, image, price, title) => {
-        
+
         const obj = { description, id, image, price, title }
 
-        setCart([...cart, obj])
-        toast.success('item added!', {
-            position: "top-right",
-            autoClose: 1500,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "dark",
-        });
+        if (user) {
+            setCart([...cart, obj])
+            toast.success('item added!', {
+                position: "top-right",
+                autoClose: 1500,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
+        } else{
+            navigate('/Login')
+        }
+
     }
 
     return (
