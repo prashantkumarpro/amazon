@@ -27,7 +27,7 @@ I’m excited to share my latest project, an **Amazon e-commerce clone** built u
 - ⚡ **State Management**: Implemented **useState**, **useRef**, **useEffect**, **Context**, and **Reducer** to manage the app state efficiently.
 - 📦 **API Integration**: Utilized **FakeAPI** to fetch e-commerce products and **custom data** for the mobile category.
 - 📱 **Fully Responsive**: Optimized for all screen sizes for a seamless user experience.
-- 🚀 **Deployed on Vercel**: Live and ready for users!
+- 🚀 **Deployed on Vercel**: Live and ready for users! https://amazon-five-amber.vercel.app/
 
 🌟 **Future Enhancements**:
 I plan to add **lazy loading** and **infinite scrolling** features to further improve performance and user experience.
